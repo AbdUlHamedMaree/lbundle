@@ -34,7 +34,7 @@ export const extensions = [
 ];
 
 const getDefaultOptions = () => ({
-  cwd: process.cwd(),
+  cwd: '.',
 });
 
 const getDefaultSwcConfig = ({ ts, jsx }: { ts: boolean; jsx: boolean }): SwcOptions => ({
@@ -86,8 +86,9 @@ export const getRollupTask = ({
 
 export const lbundle = async (baseOptions: any) => {
   const options = merge(getDefaultOptions(), baseOptions);
+  const cwd = path.resolve(process.cwd(), options.cwd);
 
-  const rootResolve = (...paths: string[]) => path.resolve(options.cwd, ...paths);
+  const rootResolve = (...paths: string[]) => path.resolve(cwd, ...paths);
 
   const pkgPath = rootResolve('package.json');
 
@@ -104,7 +105,7 @@ export const lbundle = async (baseOptions: any) => {
       pkgPath,
       isTs,
       isJsx,
-      cwd: options.cwd,
+      cwd,
     }).then(async bundle => {
       const outputs = (
         [
@@ -136,7 +137,7 @@ export const lbundle = async (baseOptions: any) => {
           pkgPath,
           isTs: path.extname(pkg['bin:source']).includes('ts'),
           isJsx: false,
-          cwd: options.cwd,
+          cwd,
         }).then(async bundle => {
           const outputs = (
             [
