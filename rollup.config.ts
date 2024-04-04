@@ -1,0 +1,77 @@
+import { defineConfig, type Plugin } from 'rollup';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import { typescriptPaths } from 'rollup-plugin-typescript-paths';
+import swc from '@rollup/plugin-swc';
+
+import pkg from './package.json';
+import { readFileSync } from 'fs';
+
+const swcConfig = JSON.parse(readFileSync('./.swcrc', 'utf-8'));
+
+const extensions = [
+  '.mtsx',
+  '.ctsx',
+  '.tsx',
+  '.mts',
+  '.cts',
+  '.ts',
+  '.mtsx',
+  '.ctsx',
+  '.tsx',
+  '.mts',
+  '.cts',
+  '.ts',
+];
+
+export default defineConfig([
+  {
+    input: pkg.source,
+    output: [
+      {
+        file: pkg.module,
+        format: 'esm',
+      },
+      {
+        file: pkg.main,
+        format: 'cjs',
+        esModule: true,
+      },
+    ],
+    treeshake: 'smallest',
+    plugins: [
+      peerDepsExternal({ includeDependencies: true }) as Plugin<any>,
+      typescriptPaths(),
+      swc({
+        swc: {
+          ...swcConfig,
+          swcrc: false,
+        },
+      }),
+      commonjs({ extensions: extensions }),
+      nodeResolve(),
+    ],
+  },
+  {
+    input: pkg['bin:source'],
+    output: {
+      file: pkg.bin,
+      format: 'cjs',
+    },
+
+    treeshake: 'smallest',
+    plugins: [
+      peerDepsExternal({ includeDependencies: true }) as Plugin<any>,
+      typescriptPaths(),
+      swc({
+        swc: {
+          ...swcConfig,
+          swcrc: false,
+        },
+      }),
+      commonjs({ extensions: extensions }),
+      nodeResolve(),
+    ],
+  },
+]);
