@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { lbundle } from './index';
 import { prog } from './program';
 
