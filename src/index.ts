@@ -10,12 +10,15 @@ import path from 'path';
 import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import type { Options as SwcOptions } from '@swc/core';
 
+export type PkgType = 'module' | 'commonjs';
+
 export type OptimalPkg = {
   source: string;
   main?: string;
   module?: string;
   bin?: string;
   'bin:source'?: string;
+  type?: PkgType;
 };
 
 export const extensions = [
@@ -84,6 +87,17 @@ export const getRollupTask = ({
     ],
   });
 
+const getExtensions = (type?: PkgType) =>
+  type === 'module'
+    ? {
+        esm: '.js',
+        cjs: '.cjs',
+      }
+    : {
+        esm: '.mjs',
+        cjs: '.js',
+      };
+
 export const lbundle = async (baseOptions: any) => {
   const options = merge(getDefaultOptions(), baseOptions);
   const cwd = path.resolve(process.cwd(), options.cwd);
@@ -99,6 +113,8 @@ export const lbundle = async (baseOptions: any) => {
   const isTs = inputExt.includes('ts');
   const isJsx = inputExt.includes('sx');
 
+  const extensions = getExtensions(pkg.type);
+
   await Promise.all([
     getRollupTask({
       input: rootResolve(pkg.source),
@@ -112,6 +128,7 @@ export const lbundle = async (baseOptions: any) => {
           typeof pkg.module === 'string' && {
             dir: path.dirname(rootResolve(pkg.module)),
             format: 'esm',
+            entryFileNames: `[name]${extensions.esm}`,
             sourcemap: true,
             preserveModules: true,
             strict: true,
@@ -119,6 +136,7 @@ export const lbundle = async (baseOptions: any) => {
           typeof pkg.main === 'string' && {
             dir: path.dirname(rootResolve(pkg.main)),
             format: 'cjs',
+            entryFileNames: `[name]${extensions.cjs}`,
             sourcemap: true,
             preserveModules: true,
             strict: true,
