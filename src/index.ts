@@ -111,7 +111,6 @@ export const lbundle = async (baseOptions: any) => {
         [
           typeof pkg.module === 'string' && {
             dir: path.dirname(rootResolve(pkg.module)),
-            entryFileNames: path.basename(pkg.module),
             format: 'esm',
             sourcemap: true,
             preserveModules: true,
@@ -119,7 +118,6 @@ export const lbundle = async (baseOptions: any) => {
           },
           typeof pkg.main === 'string' && {
             dir: path.dirname(rootResolve(pkg.main)),
-            entryFileNames: path.basename(pkg.main),
             format: 'cjs',
             sourcemap: true,
             preserveModules: true,
