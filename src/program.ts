@@ -1,6 +1,5 @@
 import { Command } from 'commander';
-
-const pkg = require('../package.json');
+import pkg from '../package.json';
 
 export const prog = new Command(pkg.name);
 

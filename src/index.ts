@@ -9,6 +9,8 @@ import fs from 'fs';
 import path from 'path';
 import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import type { Options as SwcOptions } from '@swc/core';
+import { dts } from 'rollup-plugin-dts';
+import json from '@rollup/plugin-json';
 
 export type PkgType = 'module' | 'commonjs';
 
@@ -18,6 +20,7 @@ export type OptimalPkg = {
   module?: string;
   bin?: string;
   'bin:source'?: string;
+  'types'?: string;
   type?: PkgType;
 };
 
@@ -81,6 +84,7 @@ export const getRollupTask = ({
         packageJsonPath: pkgPath,
       }) as Plugin<any>,
       typescriptPaths({}),
+      json(),
       swc({ swc: getDefaultSwcConfig({ ts: isTs, jsx: isJsx }) }),
       commonjs({ extensions: extensions }),
       nodeResolve({ rootDir: cwd }),
@@ -166,6 +170,20 @@ export const lbundle = async (baseOptions: any) => {
 
           await Promise.all(outputs.map(bundle.write));
         })
+      : Promise.resolve(),
+    pkg['types']
+      ? rollup({
+          input: rootResolve(pkg.source),
+          treeshake: 'smallest',
+
+          plugins: [dts()],
+        }).then(async bundle =>
+          bundle.write({
+            dir: path.dirname(rootResolve(pkg['types']!)),
+            entryFileNames: `[name].d.ts`,
+            format: 'es',
+          })
+        )
       : Promise.resolve(),
   ]);
 };

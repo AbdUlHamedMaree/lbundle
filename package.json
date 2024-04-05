@@ -7,6 +7,7 @@
   "module": "./dist/lbundle.mjs",
   "bin:source": "./src/cli.ts",
   "bin": "./dist/cli.js",
+  "types": "./dist/lbundle.d.ts",
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -49,6 +50,7 @@
     "lodash.merge": "^4.6.2",
     "postcss": "^8.4.38",
     "rollup": "^4.13.2",
+    "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript-paths": "^1.5.0"
   },

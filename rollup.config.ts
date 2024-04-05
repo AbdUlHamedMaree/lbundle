@@ -4,6 +4,8 @@ import commonjs from '@rollup/plugin-commonjs';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 import swc from '@rollup/plugin-swc';
+import { dts } from 'rollup-plugin-dts';
+import json from '@rollup/plugin-json';
 
 import pkg from './package.json';
 import { readFileSync } from 'fs';
@@ -39,10 +41,12 @@ export default defineConfig([
         esModule: true,
       },
     ],
+
     treeshake: 'smallest',
     plugins: [
       peerDepsExternal({ includeDependencies: true }) as Plugin<any>,
       typescriptPaths(),
+      json(),
       swc({
         swc: {
           ...swcConfig,
@@ -64,6 +68,7 @@ export default defineConfig([
     plugins: [
       peerDepsExternal({ includeDependencies: true }) as Plugin<any>,
       typescriptPaths(),
+      json(),
       swc({
         swc: {
           ...swcConfig,
@@ -73,5 +78,15 @@ export default defineConfig([
       commonjs({ extensions: extensions }),
       nodeResolve(),
     ],
+  },
+  {
+    input: pkg.source,
+    output: {
+      file: pkg.types,
+      format: 'es',
+    },
+
+    treeshake: 'smallest',
+    plugins: [json(), dts()],
   },
 ]);
