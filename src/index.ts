@@ -180,6 +180,7 @@ export const lbundle = async (baseOptions: any) => {
         }).then(async bundle =>
           bundle.write({
             dir: path.dirname(rootResolve(pkg['types']!)),
+            preserveModules: true,
             entryFileNames: `[name].d.ts`,
             format: 'es',
           })
