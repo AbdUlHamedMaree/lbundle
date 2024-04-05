@@ -8,7 +8,8 @@
   },
   "jsc": {
     "parser": {
-        "syntax": "typescript"
+      "syntax": "typescript"
     }
-  }
+  },
+  "sourceMaps": true
 }

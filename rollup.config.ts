@@ -34,11 +34,13 @@ export default defineConfig([
       {
         file: pkg.module,
         format: 'esm',
+        sourcemap: true,
       },
       {
         file: pkg.main,
         format: 'cjs',
         esModule: true,
+        sourcemap: true,
       },
     ],
 
@@ -62,6 +64,7 @@ export default defineConfig([
     output: {
       file: pkg.bin,
       format: 'cjs',
+      sourcemap: true,
     },
 
     treeshake: 'smallest',

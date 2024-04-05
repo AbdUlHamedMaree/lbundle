@@ -59,6 +59,7 @@ const getDefaultSwcConfig = ({ ts, jsx }: { ts: boolean; jsx: boolean }): SwcOpt
       : { syntax: 'ecmascript', jsx },
   },
 
+  sourceMaps: true,
   swcrc: false,
 });
 
