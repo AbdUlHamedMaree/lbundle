@@ -47,7 +47,9 @@ export default defineConfig([
     treeshake: 'smallest',
     plugins: [
       peerDepsExternal({ includeDependencies: true }) as Plugin<any>,
-      typescriptPaths(),
+      typescriptPaths({
+        preserveExtensions: true,
+      }),
       json(),
       swc({
         swc: {
@@ -70,7 +72,9 @@ export default defineConfig([
     treeshake: 'smallest',
     plugins: [
       peerDepsExternal({ includeDependencies: true }) as Plugin<any>,
-      typescriptPaths(),
+      typescriptPaths({
+        preserveExtensions: true,
+      }),
       json(),
       swc({
         swc: {

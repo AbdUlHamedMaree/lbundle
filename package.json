@@ -33,8 +33,9 @@
   "license": "MIT",
   "scripts": {
     "clean-dist": "rimraf dist",
-    "build": "rollup --config rollup.config.ts --configPlugin typescript --bundleConfigAsCjs",
-    "prepack": "npm run clean-dist && npm run build"
+    "build": "npm run clean-dist && rollup --config rollup.config.ts --configPlugin typescript --bundleConfigAsCjs",
+    "prepack": "npm run clean-dist && npm run build",
+    "test": "bun test"
   },
   "dependencies": {
     "@rollup/plugin-alias": "^5.1.0",
@@ -55,6 +56,7 @@
     "rollup-plugin-typescript-paths": "^1.5.0"
   },
   "devDependencies": {
+    "@types/bun": "^1.0.12",
     "@types/lodash.merge": "^4.6.9",
     "@types/node": "^20.12.2",
     "@types/rollup-plugin-peer-deps-external": "^2.2.5",

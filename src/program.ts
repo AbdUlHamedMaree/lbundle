@@ -3,7 +3,8 @@ import pkg from '../package.json';
 
 export const prog = new Command(pkg.name);
 
-prog.version(pkg.version);
-prog.option('-c, --cwd <cwd>', undefined, '.');
-
-prog.parse();
+prog
+  .version(pkg.version)
+  .option('-c, --cwd <cwd>', 'path to root of this build', '.')
+  .option('-s, --single', 'do you want to build to single file?', false)
+  .parse();

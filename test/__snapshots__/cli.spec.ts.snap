@@ -1,0 +1,15 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cli option no options: default build 1`] = `
+"'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var nanoid = require('nanoid');
+
+const id = ()=>nanoid.nanoid();
+
+exports.id = id;
+//# sourceMappingURL=index.js.map
+"
+`;
