@@ -1,3 +1,12 @@
+import type { OptimalPkgModel } from '$models/optimal-pkg';
 import path from 'path';
 
-export const isTs = (fileName: string) => path.extname(fileName).includes('ts');
+export const isTs = (pkg: OptimalPkgModel) => {
+  if (pkg.source && path.extname(pkg.source).includes('ts')) return true;
+
+  return (
+    !!pkg.dependencies?.typescript ||
+    !!pkg.devDependencies?.typescript ||
+    !!pkg.peerDependencies?.typescript
+  );
+};

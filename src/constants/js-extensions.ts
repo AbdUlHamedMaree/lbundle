@@ -1,4 +1,4 @@
-export const allExtensions = [
+export const jsExtensions = [
   '.mtsx',
   '.ctsx',
   '.tsx',

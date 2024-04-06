@@ -8,4 +8,7 @@ export type OptimalPkgModel = {
   'bin:source'?: string;
   'types'?: string;
   type?: PkgType;
+  dependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+  peerDependencies?: Record<string, string>;
 };

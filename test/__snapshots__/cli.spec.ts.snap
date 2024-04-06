@@ -1,15 +1,66 @@
 // Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`cli option no options: default build 1`] = `
+exports[`React Library Build with no options: index.css 1`] = `
+"body {
+  background-color: green;
+}
+.styles-module_button__Gq-i7 {
+  background-color: blue;
+}"
+`;
+
+exports[`React Library Build with no options: index.js 1`] = `
 "'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var nanoid = require('nanoid');
+var index = require('./components/button/index.js');
 
-const id = ()=>nanoid.nanoid();
 
-exports.id = id;
+
+exports.Button = index.Button;
 //# sourceMappingURL=index.js.map
+"
+`;
+
+exports[`React Library Build with no options: index.mjs 1`] = `
+"export { Button } from './components/button/index.mjs';
+//# sourceMappingURL=index.mjs.map
+"
+`;
+
+exports[`React Library Build with no options: components/button/index.js 1`] = `
+"'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var jsxRuntime = require('react/jsx-runtime');
+var styles_module = require('./styles.module.scss.js');
+
+const Button = ({ children })=>{
+    return /*#__PURE__*/ jsxRuntime.jsx("button", {
+        className: styles_module.button,
+        children: children
+    });
+};
+
+exports.Button = Button;
+//# sourceMappingURL=index.js.map
+"
+`;
+
+exports[`React Library Build with no options: components/button/index.mjs 1`] = `
+"import { jsx } from 'react/jsx-runtime';
+import styles from './styles.module.scss.mjs';
+
+const Button = ({ children })=>{
+    return /*#__PURE__*/ jsx("button", {
+        className: styles.button,
+        children: children
+    });
+};
+
+export { Button };
+//# sourceMappingURL=index.mjs.map
 "
 `;

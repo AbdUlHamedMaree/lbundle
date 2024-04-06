@@ -1,3 +1,7 @@
+import type { OptimalPkgModel } from '$models/optimal-pkg';
+import { getReactRuntime } from '$utils/get-react-runtime';
+import { isJsx } from '$utils/is-jsx';
+import { isTs } from '$utils/is-ts';
 import type { Options as SwcOptions } from '@swc/core';
 
 export type GetSwcConfigArg = {
@@ -5,7 +9,12 @@ export type GetSwcConfigArg = {
   jsx: boolean;
 };
 
-export const getSwcConfig = ({ jsx, ts }: GetSwcConfigArg): SwcOptions => {
+export const getSwcConfig = (pkg: OptimalPkgModel): SwcOptions => {
+  const reactRuntime = getReactRuntime(pkg);
+
+  const ts = isTs(pkg);
+  const jsx = isJsx(pkg);
+
   return {
     env: {
       targets: 'defaults',
@@ -20,6 +29,11 @@ export const getSwcConfig = ({ jsx, ts }: GetSwcConfigArg): SwcOptions => {
             tsx: jsx,
           }
         : { syntax: 'ecmascript', jsx },
+      transform: {
+        react: {
+          runtime: reactRuntime,
+        },
+      },
     },
 
     sourceMaps: true,

@@ -1,0 +1,15 @@
+{
+  "name": "test-project",
+  "version": "0.0.1",
+  "source": "./src/index.ts",
+  "bin:source": "./src/cli.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/cli.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/lodash.merge": "file:../../node_modules/@types/lodash.merge",
+    "lodash.merge": "file:../../node_modules/lodash.merge"
+  }
+}

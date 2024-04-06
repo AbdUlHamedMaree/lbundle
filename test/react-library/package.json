@@ -1,0 +1,17 @@
+{
+  "name": "test-project",
+  "version": "0.0.1",
+  "source": "./src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.74",
+    "@types/react-dom": "^18.2.24"
+  }
+}

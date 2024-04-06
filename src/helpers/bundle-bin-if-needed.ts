@@ -10,7 +10,7 @@ import json from '@rollup/plugin-json';
 import { getSwcConfig } from './get-swc-config';
 import type { OptimalPkgModel } from '$models/optimal-pkg';
 import type { OptionsModel } from '$models/options';
-import { allExtensions } from '$constants/all-extensions';
+import { jsExtensions } from '$constants/js-extensions';
 import type { ContextModel } from '$models/context';
 import { isTs } from '$utils/is-ts';
 import { isJsx } from '$utils/is-jsx';
@@ -27,7 +27,7 @@ export const bundleBinIfNeeded = async (
 
   const bundle = await rollup({
     input: path.resolve(options.cwd, pkg['bin:source']),
-    treeshake: 'smallest',
+    treeshake: 'recommended',
     plugins: [
       PeerDepsExternalPlugin({
         includeDependencies: true,
@@ -37,8 +37,8 @@ export const bundleBinIfNeeded = async (
         preserveExtensions: true,
       }),
       json(),
-      swc({ swc: getSwcConfig({ ts, jsx }) }),
-      commonjs({ extensions: allExtensions }),
+      swc({ swc: getSwcConfig(pkg) }),
+      commonjs({ extensions: jsExtensions }),
       nodeResolve({ rootDir: options.cwd }),
     ],
   });
