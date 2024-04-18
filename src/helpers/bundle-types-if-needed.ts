@@ -1,8 +1,9 @@
 import path from 'path';
-import { rollup } from 'rollup';
+import { rollup, type Plugin } from 'rollup';
 import { dts } from 'rollup-plugin-dts';
 import postcss from 'rollup-plugin-postcss';
 import json from '@rollup/plugin-json';
+import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 
 import type { OptimalPkgModel } from '$models/optimal-pkg';
 import type { OptionsModel } from '$models/options';
@@ -12,7 +13,7 @@ import { stylesExtensions } from '$constants/styles-extensions';
 export const bundleTypesIfNeeded = async (
   options: OptionsModel,
   pkg: OptimalPkgModel,
-  _ctx: ContextModel
+  ctx: ContextModel
 ) => {
   if (!pkg.source || !pkg.types) return;
 
@@ -20,13 +21,17 @@ export const bundleTypesIfNeeded = async (
     input: path.resolve(options.cwd, pkg.source),
     treeshake: 'recommended',
     plugins: [
+      PeerDepsExternalPlugin({
+        includeDependencies: true,
+        packageJsonPath: ctx.pkgPath,
+      }) as Plugin<any>,
       postcss({
         extract: false,
         extensions: stylesExtensions,
         plugins: [],
       }),
       json(),
-      dts(),
+      dts({ respectExternal: true }),
     ],
   });
 
