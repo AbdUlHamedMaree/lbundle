@@ -38,6 +38,10 @@ export const bundleLibIfNeeded = async (
         includeDependencies: true,
         packageJsonPath: ctx.pkgPath,
       }) as Plugin<any>,
+      PeerDepsExternalPlugin({
+        includeDependencies: true,
+        packageJsonPath: require.resolve('lbundle/package.json'),
+      }) as Plugin<any>,
       typescriptPaths({
         preserveExtensions: true,
       }),

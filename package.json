@@ -8,6 +8,16 @@
   "bin:source": "./src/cli.ts",
   "bin": "./dist/cli.js",
   "types": "./dist/lbundle.d.ts",
+  "exports": {
+    ".": {
+      "default": "./dist/lbundle.js",
+      "node": "./dist/lbundle.js",
+      "require": "./dist/lbundle.js",
+      "import": "./dist/lbundle.mjs",
+      "types": "./dist/lbundle.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
   "private": false,
   "publishConfig": {
     "access": "public"
@@ -73,5 +83,8 @@
     "rimraf": "^5.0.5",
     "sass": "^1.75.0",
     "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "core-js": ">=3.0.0"
   }
 }
