@@ -42,7 +42,7 @@ export const bundleLibIfNeeded = async (
         preserveExtensions: true,
       }),
       json(),
-      swc({ swc: getSwcConfig(pkg) }),
+      swc({ swc: getSwcConfig(pkg), exclude: /node_modules/ }),
       commonjs({ extensions: jsExtensions }),
       nodeResolve({ rootDir: options.cwd }),
     ],
