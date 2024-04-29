@@ -22,7 +22,6 @@ export const bundleBinIfNeeded = async (
 
   const bundle = await rollup({
     input: path.resolve(options.cwd, pkg['bin:source']),
-    treeshake: 'recommended',
     plugins: [
       PeerDepsExternalPlugin({
         includeDependencies: true,

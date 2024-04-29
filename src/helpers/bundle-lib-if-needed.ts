@@ -27,7 +27,6 @@ export const bundleLibIfNeeded = async (
 
   const bundle = await rollup({
     input: path.resolve(options.cwd, pkg.source),
-    treeshake: 'recommended',
     plugins: [
       postcss({
         extract: true,
