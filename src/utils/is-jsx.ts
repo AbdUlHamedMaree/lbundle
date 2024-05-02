@@ -1,7 +1,7 @@
-import type { OptimalPkgModel } from '$models/optimal-pkg';
+import type { OptimalPkgModel } from '../models/optimal-pkg';
 import path from 'path';
 
-export const isJsx = (pkg: OptimalPkgModel) => {
+export const isJsx = (pkg: OptimalPkgModel): boolean => {
   if (pkg.source && path.extname(pkg.source).includes('sx')) return true;
 
   return (

@@ -1,7 +1,7 @@
-import type { OptimalPkgModel } from '$models/optimal-pkg';
-import { getReactRuntime } from '$utils/get-react-runtime';
-import { isJsx } from '$utils/is-jsx';
-import { isTs } from '$utils/is-ts';
+import type { OptimalPkgModel } from '../models/optimal-pkg';
+import { getReactRuntime } from '../utils/get-react-runtime';
+import { isJsx } from '../utils/is-jsx';
+import { isTs } from '../utils/is-ts';
 import type { Options as SwcOptions } from '@swc/core';
 import { getSwcEnv } from './get-swc-env';
 

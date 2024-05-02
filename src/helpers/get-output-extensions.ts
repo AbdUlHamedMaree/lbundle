@@ -1,4 +1,4 @@
-import type { PkgType } from '$models/pkg-type';
+import type { PkgType } from '../models/pkg-type';
 
 export const getOutputExtensions = (type?: PkgType) =>
   type === 'module'

@@ -1,4 +1,4 @@
-import type { OptimalPkgModel } from '$models/optimal-pkg';
+import type { OptimalPkgModel } from '../models/optimal-pkg';
 import type { EnvConfig } from '@swc/core';
 
 export const getSwcEnv = (pkg: OptimalPkgModel): EnvConfig => {

@@ -8,13 +8,13 @@ import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import json from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
 
-import type { OptimalPkgModel } from '$models/optimal-pkg';
-import type { OptionsModel } from '$models/options';
+import type { OptimalPkgModel } from '../models/optimal-pkg';
+import type { OptionsModel } from '../models/options';
 import { getSwcConfig } from './get-swc-config';
-import { jsExtensions } from '$constants/js-extensions';
-import type { ContextModel } from '$models/context';
+import { jsExtensions } from '../constants/js-extensions';
+import type { ContextModel } from '../models/context';
 import { getOutputExtensions } from './get-output-extensions';
-import { stylesExtensions } from '$constants/styles-extensions';
+import { stylesExtensions } from '../constants/styles-extensions';
 
 export const bundleLibIfNeeded = async (
   options: OptionsModel,

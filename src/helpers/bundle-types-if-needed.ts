@@ -5,10 +5,10 @@ import postcss from 'rollup-plugin-postcss';
 import json from '@rollup/plugin-json';
 import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 
-import type { OptimalPkgModel } from '$models/optimal-pkg';
-import type { OptionsModel } from '$models/options';
-import type { ContextModel } from '$models/context';
-import { stylesExtensions } from '$constants/styles-extensions';
+import type { OptimalPkgModel } from '../models/optimal-pkg';
+import type { OptionsModel } from '../models/options';
+import type { ContextModel } from '../models/context';
+import { stylesExtensions } from '../constants/styles-extensions';
 
 export const bundleTypesIfNeeded = async (
   options: OptionsModel,

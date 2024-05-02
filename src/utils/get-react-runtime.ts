@@ -1,4 +1,4 @@
-import type { OptimalPkgModel } from '$models/optimal-pkg';
+import type { OptimalPkgModel } from '../models/optimal-pkg';
 import { satisfies } from 'compare-versions';
 
 const automaticRuntimeVersions = ['^16.14.0', '^15.7.0', '>=17.0.0'];

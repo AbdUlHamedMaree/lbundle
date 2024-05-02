@@ -8,10 +8,10 @@ import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import json from '@rollup/plugin-json';
 
 import { getSwcConfig } from './get-swc-config';
-import type { OptimalPkgModel } from '$models/optimal-pkg';
-import type { OptionsModel } from '$models/options';
-import { jsExtensions } from '$constants/js-extensions';
-import type { ContextModel } from '$models/context';
+import type { OptimalPkgModel } from '../models/optimal-pkg';
+import type { OptionsModel } from '../models/options';
+import { jsExtensions } from '../constants/js-extensions';
+import type { ContextModel } from '../models/context';
 
 export const bundleBinIfNeeded = async (
   options: OptionsModel,
