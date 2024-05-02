@@ -3,6 +3,7 @@ import { getReactRuntime } from '$utils/get-react-runtime';
 import { isJsx } from '$utils/is-jsx';
 import { isTs } from '$utils/is-ts';
 import type { Options as SwcOptions } from '@swc/core';
+import { getSwcEnv } from './get-swc-env';
 
 export type GetSwcConfigArg = {
   ts: boolean;
@@ -16,12 +17,7 @@ export const getSwcConfig = (pkg: OptimalPkgModel): SwcOptions => {
   const jsx = isJsx(pkg);
 
   return {
-    env: {
-      targets: 'defaults',
-      coreJs: '3.36.1',
-      mode: 'usage',
-      bugfixes: true,
-    },
+    env: getSwcEnv(pkg),
     jsc: {
       parser: ts
         ? {

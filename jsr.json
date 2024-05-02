@@ -1,0 +1,6 @@
+{
+  "$schema": "https://jsr.io/schema/config-file.v1.json",
+  "name": "@mrii/lbundle",
+  "version": "0.0.17",
+  "exports": "./src/index.ts"
+}
