@@ -48,7 +48,7 @@
     "test": "bun test",
     "lint": "eslint . --quiet",
     "lint:fix": "bun run lint --fix",
-    "format": "prettier . --write",
+    "format": "bunx --bun prettier . --write",
     "prepare": "husky"
   },
   "dependencies": {
