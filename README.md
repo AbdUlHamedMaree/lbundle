@@ -97,7 +97,7 @@ And That's it, it will generate the bundle for you at the target directory.
 - 🗺️ path alias: supports TS path alias transformation.
 - 📤 auto externals: look for your `dependencies` and `peerDependencies` and exclude them from the bundle.
 - 🪛 json: supports importing `json` files in your code.
-- polyfills: supports adding polyfills to the bundle if you're using latest ES features (make sure to have `core-js` installed)
+- 📦 polyfills: supports adding polyfills to the bundle if you're using latest ES features (make sure to have `core-js` installed)
 
 ## 🛣️ Roadmap
 
