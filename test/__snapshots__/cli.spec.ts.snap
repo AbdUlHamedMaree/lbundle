@@ -37,7 +37,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var jsxRuntime = require('react/jsx-runtime');
 var styles_module = require('./styles.module.scss.js');
 
-const Button = ({ children })=>{
+const Button = (param)=>{
+    let { children } = param;
     return /*#__PURE__*/ jsxRuntime.jsx("button", {
         className: styles_module.button,
         children: children
@@ -53,7 +54,8 @@ exports[`React Library Build with no options: components/button/index.mjs 1`] = 
 "import { jsx } from 'react/jsx-runtime';
 import styles from './styles.module.scss.mjs';
 
-const Button = ({ children })=>{
+const Button = (param)=>{
+    let { children } = param;
     return /*#__PURE__*/ jsx("button", {
         className: styles.button,
         children: children
