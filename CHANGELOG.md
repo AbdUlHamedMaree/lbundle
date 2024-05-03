@@ -1,3 +1,9 @@
+## [1.1.2](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.1.1...v1.1.2) (2024-05-03)
+
+### Bug Fixes
+
+- remove unwanted file ([1b20e4c](https://github.com/AbdUlHamedMaree/lbundle/commit/1b20e4cff196dd1c811304582d20293db3133ed6))
+
 ## [1.1.1](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.1.0...v1.1.1) (2024-05-03)
 
 ### Bug Fixes
