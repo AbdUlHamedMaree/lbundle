@@ -46,6 +46,9 @@
     "build": "bun run --bun ./src/cli",
     "prepack": "bun run build",
     "test": "bun test",
+    "lint": "eslint . --quiet",
+    "lint:fix": "bun run lint --fix",
+    "format": "prettier . --write",
     "prepare": "husky"
   },
   "dependencies": {
