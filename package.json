@@ -1,6 +1,6 @@
 {
   "name": "lbundle",
-  "version": "1.0.0",
+  "version": "0.0.0-semantic-release",
   "description": "Small zero-configuration bundler build on top of Rollup.js and SWC for NPM libraries",
   "source": "./src/index.ts",
   "main": "./dist/lbundle.js",
