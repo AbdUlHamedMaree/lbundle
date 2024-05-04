@@ -1,12 +1,20 @@
 import type { PkgType } from './pkg-type';
 
 export type OptimalPkgModel = {
+  name: string;
+  version: string;
+
   source?: string;
+  'bin:source'?: string;
+
   main?: string;
   module?: string;
-  bin?: string;
-  'bin:source'?: string;
+
   'types'?: string;
+
+  bin?: string;
+  unpkg?: string;
+
   type?: PkgType;
   dependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;

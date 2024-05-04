@@ -8,25 +8,20 @@ import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import json from '@rollup/plugin-json';
 import postcss from 'rollup-plugin-postcss';
 
-import type { OptimalPkgModel } from '../models/optimal-pkg';
-import type { OptionsModel } from '../models/options';
 import { getSwcConfig } from './get-swc-config';
 import { jsExtensions } from '../constants/js-extensions';
 import type { ContextModel } from '../models/context';
-import { getOutputExtensions } from './get-output-extensions';
 import { stylesExtensions } from '../constants/styles-extensions';
+import { isEmptyArray, isNil } from '../utils/checks';
+import typescript from '@rollup/plugin-typescript';
 
-export const bundleLibIfNeeded = async (
-  options: OptionsModel,
-  pkg: OptimalPkgModel,
-  ctx: ContextModel
-) => {
-  if (!pkg.source || (!pkg.main && !pkg.module)) return;
+export const bundleLibIfNeeded = async (ctx: ContextModel) => {
+  const { pkg, options, libOutputs, pkgPath, resolvedSource } = ctx;
 
-  const extensions = getOutputExtensions(pkg.type);
+  if (isNil(resolvedSource) || isEmptyArray(libOutputs)) return;
 
   const bundle = await rollup({
-    input: path.resolve(options.cwd, pkg.source),
+    input: resolvedSource,
     plugins: [
       postcss({
         extract: true,
@@ -35,39 +30,24 @@ export const bundleLibIfNeeded = async (
       }),
       PeerDepsExternalPlugin({
         includeDependencies: true,
-        packageJsonPath: ctx.pkgPath,
+        packageJsonPath: pkgPath,
       }) as Plugin<any>,
       typescriptPaths({
         preserveExtensions: true,
       }),
       json(),
-      swc({ swc: getSwcConfig(pkg), exclude: /node_modules/ }),
+      swc({ swc: getSwcConfig(ctx), exclude: /node_modules/ }),
       commonjs({ extensions: jsExtensions }),
       nodeResolve({ rootDir: options.cwd }),
+      !!pkg.types &&
+        typescript({
+          rootDir: path.dirname(resolvedSource),
+          emitDeclarationOnly: true,
+          declarationDir: path.resolve(options.cwd, path.dirname(pkg.types)),
+          declaration: true,
+        }),
     ],
   });
 
-  await Promise.all([
-    pkg.module
-      ? bundle.write({
-          dir: path.dirname(path.resolve(options.cwd, pkg.module)),
-          format: 'esm',
-          entryFileNames: `[name]${extensions.esm}`,
-          sourcemap: true,
-          preserveModules: true,
-          strict: true,
-        })
-      : Promise.resolve(),
-    pkg.main
-      ? bundle.write({
-          dir: path.dirname(path.resolve(options.cwd, pkg.main)),
-          format: 'cjs',
-          entryFileNames: `[name]${extensions.cjs}`,
-          sourcemap: true,
-          preserveModules: true,
-          strict: true,
-          esModule: true,
-        })
-      : Promise.resolve(),
-  ]);
+  await Promise.all(libOutputs.map(outputConfig => bundle.write(outputConfig)));
 };

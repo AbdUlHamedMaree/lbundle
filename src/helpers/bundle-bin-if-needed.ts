@@ -8,38 +8,31 @@ import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import json from '@rollup/plugin-json';
 
 import { getSwcConfig } from './get-swc-config';
-import type { OptimalPkgModel } from '../models/optimal-pkg';
-import type { OptionsModel } from '../models/options';
 import { jsExtensions } from '../constants/js-extensions';
 import type { ContextModel } from '../models/context';
+import { isNil } from '../utils/checks';
 
-export const bundleBinIfNeeded = async (
-  options: OptionsModel,
-  pkg: OptimalPkgModel,
-  ctx: ContextModel
-) => {
-  if (!pkg['bin:source'] || !pkg.bin) return;
+export const bundleBinIfNeeded = async (ctx: ContextModel) => {
+  const { pkg, pkgPath, options, binOutput } = ctx;
+
+  if (isNil(pkg['bin:source']) || isNil(binOutput)) return;
 
   const bundle = await rollup({
     input: path.resolve(options.cwd, pkg['bin:source']),
     plugins: [
       PeerDepsExternalPlugin({
         includeDependencies: true,
-        packageJsonPath: ctx.pkgPath,
+        packageJsonPath: pkgPath,
       }) as Plugin<any>,
       typescriptPaths({
         preserveExtensions: true,
       }),
       json(),
-      swc({ swc: getSwcConfig(pkg), exclude: /node_modules/ }),
+      swc({ swc: getSwcConfig(ctx), exclude: /node_modules/ }),
       commonjs({ extensions: jsExtensions }),
       nodeResolve({ rootDir: options.cwd }),
     ],
   });
 
-  await bundle.write({
-    file: path.resolve(options.cwd, pkg.bin),
-    format: 'cjs',
-    sourcemap: true,
-  });
+  await bundle.write(binOutput);
 };

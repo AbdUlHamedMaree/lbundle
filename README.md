@@ -1,5 +1,11 @@
 # lbundle
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/AbdUlHamedMaree/lbundle/release.yml?logo=github)
+![NPM Version](https://img.shields.io/npm/v/lbundle?logo=npm)
+![NPM Downloads](https://img.shields.io/npm/dw/lbundle?logo=npm)
+![NPM License](https://img.shields.io/npm/l/lbundle)
+![GitHub Repo stars](https://img.shields.io/github/stars/AbdUlHamedMaree/lbundle)
+
 Small zero-configuration bundler build on top of Rollup.js and SWC for NPM libraries
 
 ## 🚀 Motivation
@@ -29,10 +35,10 @@ bun i -D lbundle
 
 ```bash
 # deno
-deno add @mrii/lbundle
+deno add -D @mrii/lbundle
 
 # jsr
-npx jsr add @mrii/rocket-io
+npx jsr add -D @mrii/lbundle
 ```
 
 ## 🔧 Usage
@@ -49,13 +55,16 @@ This bundler heavily relay on your `package.json` best practices.
 
   "types": "./dist/index.d.ts", // declaration entry
 
+  "unpkg": "./dist/index.umd.js", // umd entry
+  // "unpkg": "./dist/index.amd.js", // or as amd
+  // "unpkg": "./dist/index.iife.js", // or as iife
+
   "bin:source": "./src/cli.ts", // your source code bin entry
   "bin": "./dist/cli.js", // bin entry
 
   "sideEffects": false, // enable tree shaking for your library code, also useful for users bundlers
 
-  // for lbundle@1, it still doesn't read exports, but maybe for the future
-
+  // the bundler will check for for different extension to bundle different formats
   "exports": {
     ".": {
       "default": "./dist/index.js",
@@ -82,10 +91,10 @@ And That's it, it will generate the bundle for you at the target directory.
 
 ## ✨ Features
 
-- 🤩 all in 1: supports bundling your library into bin and normal bundle (cjs & esm), and generate declarations files as well.
+- 🤩 all in 1: supports bundling your library and binary into all known formats (`esm`, `cjs`, `umd`, `amd` and `iife`), and generate declarations files as well.
 - 🚀 fast: it uses rust to compile source code into target env.
 - 🍙 bun: can be used with `bunx --bun lbundle` to speed up the bundling even more.
-- 🌲 tree shaking: it will preserve your file structure (for `main` and `module` entries) so bundlers can exclude unused code easily.
+- 🌲 tree shaking: it will preserve your file structure (for `cjs` and `esm` formats) so bundlers can exclude unused code easily.
 - 🎮 typescript: it supports bundling typescript code out of the box (make sure have `typescript` installed).
 - 🎯 JSX: supports JSX transformation out of the box (make sure have `react` and `react-dom` installed).
 - 💅 styles: it support all kind of style files:
@@ -94,15 +103,15 @@ And That's it, it will generate the bundle for you at the target directory.
   - `less`: just install `less`.
   - `styl`, `stylus`: just install `stylus`.
 - 🍇 CSS modules: all styles files support CSS modules by just appending `.module.` before the file extension.
-- 🗺️ path alias: supports TS path alias transformation.
+- 🗺️ path alias: supports TS `path` and `baseUrl` transformation.
 - 📤 auto externals: look for your `dependencies` and `peerDependencies` and exclude them from the bundle.
 - 🪛 json: supports importing `json` files in your code.
 - 📦 polyfills: supports adding polyfills to the bundle if you're using latest ES features (make sure to have `core-js` installed)
 
 ## 🛣️ Roadmap
 
-- [ ] bundling into UMD and AMD formats.
-- [ ] reading `exports` field and generate extra output according to it.
+- [x] bundling into UMD and AMD formats.
+- [x] reading `exports` field and generate extra output according to it.
 - [ ] `vue` jsx transformation.
 - [ ] extending SWC and Rollup config.
 - [ ] useful logs.
@@ -113,9 +122,9 @@ And That's it, it will generate the bundle for you at the target directory.
   - [ ] single entry instead of preserved modules.
   - [ ] JSX transformation options.
   - ...
-- [ ] tests.
-- [ ] CI.
-- [ ] changelog.
+- [ ] tests (partially done).
+- [x] CI.
+- [x] changelog.
 - [ ] contributors.
 
 ## 🧰 API

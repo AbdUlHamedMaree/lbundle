@@ -39,7 +39,7 @@ var styles_module = require('./styles.module.scss.js');
 
 const Button = (param)=>{
     let { children } = param;
-    return /*#__PURE__*/ jsxRuntime.jsx("button", {
+    return jsxRuntime.jsx("button", {
         className: styles_module.button,
         children: children
     });
@@ -56,7 +56,7 @@ import styles from './styles.module.scss.mjs';
 
 const Button = (param)=>{
     let { children } = param;
-    return /*#__PURE__*/ jsx("button", {
+    return jsx("button", {
         className: styles.button,
         children: children
     });
