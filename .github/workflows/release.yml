@@ -36,9 +36,6 @@ jobs:
           bun i --cwd ./test/react-library --frozen-lockfile &&
           bun i --cwd ./test/utils-library --frozen-lockfile
 
-      - name: Install `semantic-release`` extra plugins
-        run: bun i -D @semantic-release/changelog @semantic-release/git
-
       - name: Test
         run: npm run test
 
