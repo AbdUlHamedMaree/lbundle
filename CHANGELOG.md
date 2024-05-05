@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.2.0...v1.3.0) (2024-05-05)
+
+
+### Features
+
+* support bin object ([a9f3363](https://github.com/AbdUlHamedMaree/lbundle/commit/a9f33633d8f57d072e91acbd47f1326f35486b19))
+
 # [1.2.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.1.2...v1.2.0) (2024-05-05)
 
 
