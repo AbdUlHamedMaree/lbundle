@@ -12,7 +12,12 @@ module.exports = {
     ],
     '@sebbo2002/semantic-release-jsr',
     '@semantic-release/npm',
-    '@semantic-release/github',
+    [
+      '@semantic-release/github',
+      {
+        assets: [{ 'path': 'build/**/*', 'label': 'Bundle' }],
+      },
+    ],
     [
       '@semantic-release/git',
       {
