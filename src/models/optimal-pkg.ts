@@ -12,7 +12,7 @@ export type OptimalPkgModel = {
 
   'types'?: string;
 
-  bin?: string;
+  bin?: string | Record<string, string | undefined>;
   unpkg?: string;
 
   type?: PkgType;

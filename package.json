@@ -1,15 +1,33 @@
 {
   "name": "lbundle",
   "version": "1.2.0",
+  "private": false,
   "description": "Small zero-configuration bundler build on top of Rollup.js and SWC for NPM libraries",
-  "source": "./src/index.ts",
-  "main": "./dist/lbundle.js",
-  "module": "./dist/lbundle.mjs",
-  "bin:source": "./src/cli.ts",
-  "bin": {
-    "lbundle": "dist/cli.js"
+  "keywords": [
+    "lbundle",
+    "bundle",
+    "bundler",
+    "compile",
+    "compiler",
+    "rollup",
+    "rollupjs",
+    "swc",
+    "rust"
+  ],
+  "homepage": "https://github.com/AbdUlHamedMaree/lbundle#readme",
+  "bugs": {
+    "url": "https://github.com/AbdUlHamedMaree/lbundle/issues",
+    "email": "hmidmrii@gmail.com"
   },
-  "types": "./dist/lbundle.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdUlHamedMaree/lbundle.git"
+  },
+  "license": "MIT",
+  "author": "AbdUlHameed Murie <hmidmrii@gmail.com> (https://www.linkedin.com/in/abd-ul-hameed-maree/)",
+  "contributors": [
+    "AbdUlHameed Murie <hmidmrii@gmail.com> (https://www.linkedin.com/in/abd-ul-hameed-maree/)"
+  ],
   "exports": {
     ".": {
       "default": "./dist/lbundle.js",
@@ -20,40 +38,25 @@
     },
     "./package.json": "./package.json"
   },
-  "private": false,
-  "publishConfig": {
-    "access": "public"
+  "main": "./dist/lbundle.js",
+  "module": "./dist/lbundle.mjs",
+  "source": "./src/index.ts",
+  "bin:source": "./src/cli.ts",
+  "types": "./dist/lbundle.d.ts",
+  "bin": {
+    "lbundle": "./dist/cli.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AbdUlHamedMaree/lbundle.git"
-  },
-  "keywords": [
-    "lbundle",
-    "bundle",
-    "bundler",
-    "compile",
-    "compiler",
-    "compile",
-    "compiler",
-    "rollup",
-    "rollupjs",
-    "swc",
-    "rust"
-  ],
   "files": [
     "dist"
   ],
-  "author": "AbdUlHameed Murie (https://github.com/AbdUlHamedMaree)",
-  "license": "MIT",
   "scripts": {
     "prebuild": "bunx --bun rimraf dist",
     "build": "bun run --bun ./src/cli",
-    "test": "bun test",
+    "format": "bunx --bun prettier . --write",
     "lint": "eslint . --quiet",
     "lint:fix": "bun run lint --fix",
-    "format": "bunx --bun prettier . --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "bun test"
   },
   "dependencies": {
     "@rollup/plugin-commonjs": "^25.0.7",
@@ -100,5 +103,8 @@
     "semantic-release": "^23.0.8",
     "stylus": "^0.63.0",
     "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
