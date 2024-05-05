@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.1.2...v1.2.0) (2024-05-05)
+
+
+### Bug Fixes
+
+* remove bun.lockb file ([7283688](https://github.com/AbdUlHamedMaree/lbundle/commit/72836882ddc6cc1a87a79e573ffa3e7ff4380b19))
+
+
+### Features
+
+* support amd, umd and iife formats and read exports field ([dc33e63](https://github.com/AbdUlHamedMaree/lbundle/commit/dc33e637921a0d3e6a0544e0457df60ae4e03596))
+
 ## [1.1.2](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.1.1...v1.1.2) (2024-05-03)
 
 ### Bug Fixes
