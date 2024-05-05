@@ -6,7 +6,9 @@
   "main": "./dist/lbundle.js",
   "module": "./dist/lbundle.mjs",
   "bin:source": "./src/cli.ts",
-  "bin": "./dist/cli.js",
+  "bin": {
+    "lbundle": "dist/cli.js"
+  },
   "types": "./dist/lbundle.d.ts",
   "exports": {
     ".": {
@@ -22,7 +24,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "repository": "AbdUlHamedMaree/lbundle",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbdUlHamedMaree/lbundle.git"
+  },
   "keywords": [
     "lbundle",
     "bundle",
