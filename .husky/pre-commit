@@ -1,1 +1,2 @@
-npx lint-staged
+bunx lint-staged
+npx jsr publish --dry-run
