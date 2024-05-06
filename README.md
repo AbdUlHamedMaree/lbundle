@@ -1,10 +1,23 @@
 # lbundle
 
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/AbdUlHamedMaree/lbundle/release.yml?logo=github)
-![NPM Version](https://img.shields.io/npm/v/lbundle?logo=npm)
-![NPM Downloads](https://img.shields.io/npm/dw/lbundle?logo=npm)
-![NPM License](https://img.shields.io/npm/l/lbundle)
-![GitHub Repo stars](https://img.shields.io/github/stars/AbdUlHamedMaree/lbundle)
+<a href="https://github.com/AbdUlHamedMaree/lbundle/actions/workflows/release.yml">
+  <img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/AbdUlHamedMaree/lbundle/release.yml?logo=github">
+</a>
+<a href="https://www.npmjs.com/package/lbundle">
+  <img alt="NPM Version" src="https://img.shields.io/npm/v/lbundle?logo=npm">
+</a>
+<a href="https://www.npmjs.com/package/lbundle">
+  <img alt="NPM Downloads" src="https://img.shields.io/npm/dw/lbundle?logo=npm">
+</a>
+<a href="https://www.npmjs.com/package/lbundle">
+  <img alt="NPM License" src="https://img.shields.io/npm/l/lbundle">
+</a>
+<a href="https://jsr.io/@mrii/lbundle">
+  <img alt="JSR Version" src="https://img.shields.io/jsr/v/%40mrii/lbundle?logo=jsr">
+</a>
+<a href="https://github.com/AbdUlHamedMaree/lbundle">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/AbdUlHamedMaree/lbundle">
+</a>
 
 Small zero-configuration bundler build on top of Rollup.js and SWC for NPM libraries
 
