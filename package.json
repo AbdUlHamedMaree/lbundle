@@ -30,11 +30,11 @@
   ],
   "exports": {
     ".": {
-      "default": "./dist/lbundle.js",
-      "node": "./dist/lbundle.js",
       "require": "./dist/lbundle.js",
       "import": "./dist/lbundle.mjs",
-      "types": "./dist/lbundle.d.ts"
+      "node": "./dist/lbundle.js",
+      "types": "./dist/lbundle.d.ts",
+      "default": "./dist/lbundle.js"
     },
     "./package.json": "./package.json"
   },
@@ -64,13 +64,13 @@
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-swc": "^0.3.0",
     "@rollup/plugin-typescript": "^11.1.6",
-    "@swc/core": "^1.4.16",
+    "@swc/core": "^1.5.5",
     "change-case": "^5.4.4",
     "commander": "^12.0.0",
     "compare-versions": "^6.1.0",
     "lodash.merge": "^4.6.2",
     "postcss": "^8.4.38",
-    "rollup": "^4.14.3",
+    "rollup": "^4.17.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript-paths": "^1.5.0"
@@ -78,31 +78,40 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@sebbo2002/semantic-release-jsr": "^1.0.0-develop.11",
+    "@sebbo2002/semantic-release-jsr": "^1.0.0",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/bun": "^1.1.0",
+    "@types/bun": "^1.1.1",
     "@types/lodash.merge": "^4.6.9",
-    "@types/node": "^20.12.7",
+    "@types/node": "^20.12.11",
     "@types/rollup-plugin-peer-deps-external": "^2.2.5",
-    "@typescript-eslint/eslint-plugin": "^7.7.0",
-    "@typescript-eslint/parser": "^7.7.0",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
     "eslint-config-react-ts-hero": "^1",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-unused-imports": "^3.1.0",
     "husky": "^9.0.11",
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
     "rimraf": "^5.0.5",
-    "sass": "^1.76.0",
+    "sass": "^1.77.0",
     "semantic-release": "^23.0.8",
     "stylus": "^0.63.0",
     "typescript": "^5.4.5"
+  },
+  "peerDependencies": {
+    "less": ">=4.0.0",
+    "sass": ">=1.0.0",
+    "stylus": ">=0.50.0"
+  },
+  "peerDependenciesMeta": {
+    "less": {
+      "optional": true
+    },
+    "sass": {
+      "optional": true
+    },
+    "stylus": {
+      "optional": true
+    }
   },
   "publishConfig": {
     "access": "public"
