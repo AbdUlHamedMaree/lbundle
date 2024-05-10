@@ -51,7 +51,7 @@
   ],
   "scripts": {
     "prebuild": "bunx --bun rimraf dist",
-    "build": "bunx --bun lbundle",
+    "build": "bun run ./src/cli",
     "test": "bun test",
     "lint": "eslint . --quiet",
     "lint:fix": "bun run lint --fix",
