@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.0...v1.3.1) (2024-05-10)
+
+
+### Bug Fixes
+
+* package.json exports field order ([e4c342f](https://github.com/AbdUlHamedMaree/lbundle/commit/e4c342f6b583c4d2f239eab55546171b4be59c25))
+
 # [1.3.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.2.0...v1.3.0) (2024-05-05)
 
 
