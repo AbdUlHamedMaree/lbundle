@@ -11,7 +11,7 @@ export const getSwcEnv = (pkg: OptimalPkgModel): EnvConfig => {
 
   return {
     targets: 'defaults',
-    coreJs: '3.36.1',
+    coreJs: coreJsVersion,
     mode: 'usage',
     bugfixes: true,
   };

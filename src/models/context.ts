@@ -11,6 +11,10 @@ export type ContextModel = {
   pkgPath: string;
   pkg: OptimalPkgModel;
 
+  swcPath?: string;
+
+  tsconfigPath?: string;
+
   isModule: boolean;
 
   resolvedSource?: string;

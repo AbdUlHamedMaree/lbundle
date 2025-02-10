@@ -12,16 +12,16 @@ exports[`React Library Build with no options: index.css 1`] = `
 exports[`React Library Build with no options: index.js 1`] = `
 "'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var index = require('./components/button/index.js');
+var index = require('./index2.js');
 
 
 
-exports.Button = index.Button;
+module.exports = index;
 //# sourceMappingURL=index.js.map
 "
 `;
+
+exports[`React Library Build with no options: index.js.map 1`] = `"{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":";;;;;;"}"`;
 
 exports[`React Library Build with no options: index.mjs 1`] = `
 "export { Button } from './components/button/index.mjs';
@@ -29,26 +29,88 @@ exports[`React Library Build with no options: index.mjs 1`] = `
 "
 `;
 
-exports[`React Library Build with no options: components/button/index.js 1`] = `
+exports[`React Library Build with no options: index.mjs.map 1`] = `"{"version":3,"file":"index.mjs","sources":[],"sourcesContent":[],"names":[],"mappings":""}"`;
+
+exports[`React Library Build with no options: index.d.ts 1`] = `
+"import './index.scss';
+export * from './components';
+"
+`;
+
+exports[`React Library Build with no options: components/index.js 1`] = `
 "'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
+var index = require('../_virtual/index2.js');
+require('./button/index.js');
+var index$1 = require('../_virtual/index3.js');
 
-var jsxRuntime = require('react/jsx-runtime');
-var styles_module = require('./styles.module.scss.js');
-
-const Button = (param)=>{
-    let { children } = param;
-    return jsxRuntime.jsx("button", {
-        className: styles_module.button,
-        children: children
-    });
-};
-
-exports.Button = Button;
+(function (exports) {
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	_export_star(index$1.__exports, exports);
+	function _export_star(from, to) {
+	    Object.keys(from).forEach(function(k) {
+	        if (k !== "default" && !Object.prototype.hasOwnProperty.call(to, k)) {
+	            Object.defineProperty(to, k, {
+	                enumerable: true,
+	                get: function() {
+	                    return from[k];
+	                }
+	            });
+	        }
+	    });
+	    return from;
+	} 
+} (index.__exports));
 //# sourceMappingURL=index.js.map
 "
 `;
+
+exports[`React Library Build with no options: components/index.js.map 1`] = `"{"version":3,"file":"index.js","sources":["../../src/components/index.ts"],"sourcesContent":["export * from './button';\n"],"names":["require$$0"],"mappings":";;;;;;;;;;AAAc,CAAA,YAAA,CAAAA,iBAAA,EAAA,OAAA,CAAA;;;;;;;;;;;;;;;;"}"`;
+
+exports[`React Library Build with no options: components/index.d.ts 1`] = `
+"export * from './button';
+"
+`;
+
+exports[`React Library Build with no options: components/button/index.js 1`] = `
+"'use strict';
+
+var index = require('../../_virtual/index3.js');
+var require$$0 = require('react/jsx-runtime');
+var styles_module = require('../../_virtual/styles.module.scss.js');
+
+(function (exports) {
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	Object.defineProperty(exports, "Button", {
+	    enumerable: true,
+	    get: function() {
+	        return Button;
+	    }
+	});
+	const _jsxruntime = require$$0;
+	const _stylesmodulescss = /*#__PURE__*/ _interop_require_default(styles_module);
+	function _interop_require_default(obj) {
+	    return obj && obj.__esModule ? obj : {
+	        default: obj
+	    };
+	}
+	const Button = (param)=>{
+	    let { children } = param;
+	    return (0, _jsxruntime.jsx)("button", {
+	        className: _stylesmodulescss.default.button,
+	        children: children
+	    });
+	}; 
+} (index.__exports));
+//# sourceMappingURL=index.js.map
+"
+`;
+
+exports[`React Library Build with no options: components/button/index.js.map 1`] = `"{"version":3,"file":"index.js","sources":["../../../src/components/button/index.tsx"],"sourcesContent":["import { jsx as _jsx } from \"react/jsx-runtime\";\nimport styles from './styles.module.scss';\nexport const Button = ({ children }) => {\n    return _jsx(\"button\", { className: styles.button, children: children });\n};\n"],"names":["Button","require$$1","children","_jsx","className","styles","button"],"mappings":";;;;;;;;;;AAEaA,CAAAA,MAAAA,CAAAA,cAAAA,CAAAA,OAAAA,EAAAA,QAAAA,EAAAA;;;SAAAA,OAAAA,MAAAA;;;CAFe,MAAA,WAAA,GAAA,UAAA;CACT,MAAA,iBAAA,iBAAA,wBAAA,CAAAC,aAAA,CAAA;;;;;;AACZ,CAAA,MAAMD,MAAS,GAAA,CAAA,KAAA,GAAA;AAAC,KAAA,IAAA,EAAEE,QAAQ,EAAE,GAAA,KAAA;KAC/B,OAAOC,IAAAA,WAAI,CAAA,GAAA,EAAC,QAAU,EAAA;SAAEC,SAAWC,EAAAA,iBAAAA,CAAAA,OAAM,CAACC,MAAM;SAAEJ,QAAUA,EAAAA;AAAS,MAAA,CAAA;EACzE,CAAA;;;"}"`;
 
 exports[`React Library Build with no options: components/button/index.mjs 1`] = `
 "import { jsx } from 'react/jsx-runtime';
@@ -64,5 +126,95 @@ const Button = (param)=>{
 
 export { Button };
 //# sourceMappingURL=index.mjs.map
+"
+`;
+
+exports[`React Library Build with no options: components/button/index.mjs.map 1`] = `"{"version":3,"file":"index.mjs","sources":["../../../src/components/button/index.tsx"],"sourcesContent":["import { jsx as _jsx } from \"react/jsx-runtime\";\nimport styles from './styles.module.scss';\nexport const Button = ({ children }) => {\n    return _jsx(\"button\", { className: styles.button, children: children });\n};\n"],"names":["Button","children","_jsx","className","styles","button"],"mappings":";;;MAEaA,MAAS,GAAA,CAAA,KAAA,GAAA;AAAC,IAAA,IAAA,EAAEC,QAAQ,EAAE,GAAA,KAAA;AAC/B,IAAA,OAAOC,IAAK,QAAU,EAAA;AAAEC,QAAAA,SAAAA,EAAWC,OAAOC,MAAM;QAAEJ,QAAUA,EAAAA;AAAS,KAAA,CAAA;AACzE;;;;"}"`;
+
+exports[`React Library Build with no options: components/button/index.d.ts 1`] = `
+"export type ButtonProps = {
+    children?: React.ReactNode;
+};
+export declare const Button: React.FC<ButtonProps>;
+"
+`;
+
+exports[`Utils Library Build with no options: cli.js 1`] = `
+"#!/usr/bin/env node
+'use strict';
+
+var require$$0 = require('lodash.merge');
+
+var cli = {};
+
+var src = {};
+
+(function (exports) {
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	Object.defineProperty(exports, "myMerge", {
+	    enumerable: true,
+	    get: function() {
+	        return myMerge;
+	    }
+	});
+	const _lodashmerge = /*#__PURE__*/ _interop_require_default(require$$0);
+	function _interop_require_default(obj) {
+	    return obj && obj.__esModule ? obj : {
+	        default: obj
+	    };
+	}
+	const myMerge = (o1, o2)=>(0, _lodashmerge.default)(o1, o2); 
+} (src));
+
+Object.defineProperty(cli, "__esModule", {
+    value: true
+});
+const _ = src;
+const o = (0, _.myMerge)({
+    a: 1,
+    b: 1
+}, {
+    b: 2,
+    c: 2
+});
+console.log(JSON.stringify(o, null, 2));
+
+module.exports = cli;
+//# sourceMappingURL=cli.js.map
+"
+`;
+
+exports[`Utils Library Build with no options: cli.js.map 1`] = `"{"version":3,"file":"cli.js","sources":["../src/index.ts","../src/cli.ts"],"sourcesContent":["import merge from 'lodash.merge';\r\n\r\nexport const myMerge = (o1: object, o2: object) => merge(o1, o2);\r\n","#!/usr/bin/env node\r\n\r\nimport { myMerge } from '.';\r\n\r\nconst o = myMerge({ a: 1, b: 1 }, { b: 2, c: 2 });\r\n\r\nconsole.log(JSON.stringify(o, null, 2));\r\n"],"names":["myMerge","o1","o2","merge","require$$0","o","a","b","c","console","log","JSON","stringify"],"mappings":";;;;;;;;;;;;;AAEaA,CAAAA,MAAAA,CAAAA,cAAAA,CAAAA,OAAAA,EAAAA,SAAAA,EAAAA;;;SAAAA,OAAAA,OAAAA;;;CAFK,MAAA,YAAA,iBAAA,wBAAA,CAAA,UAAA,CAAA;;;;;;AAEX,CAAA,MAAMA,UAAU,CAACC,EAAAA,EAAYC,KAAeC,IAAAA,YAAAA,CAAAA,OAAK,EAACF,EAAIC,EAAAA,EAAAA,CAAAA,CAAAA;;;;;;ACArC,MAAA,CAAA,GAAAE,GAAA;AAExB,MAAMC,CAAAA,GAAIL,IAAAA,CAAAA,CAAAA,OAAO,EAAC;IAAEM,CAAG,EAAA,CAAA;IAAGC,CAAG,EAAA;AAAE,CAAG,EAAA;IAAEA,CAAG,EAAA,CAAA;IAAGC,CAAG,EAAA;AAAE,CAAA,CAAA;AAE/CC,OAAAA,CAAQC,GAAG,CAACC,IAAAA,CAAKC,SAAS,CAACP,GAAG,IAAM,EAAA,CAAA,CAAA,CAAA;;;;"}"`;
+
+exports[`Utils Library Build with no options: index.js 1`] = `
+"'use strict';
+
+var index = require('./index2.js');
+
+
+
+module.exports = index;
+//# sourceMappingURL=index.js.map
+"
+`;
+
+exports[`Utils Library Build with no options: index.js.map 1`] = `"{"version":3,"file":"index.js","sources":[],"sourcesContent":[],"names":[],"mappings":";;;;;;"}"`;
+
+exports[`Utils Library Build with no options: index.mjs 1`] = `
+"import merge from 'lodash.merge';
+
+const myMerge = (o1, o2)=>merge(o1, o2);
+
+export { myMerge };
+//# sourceMappingURL=index.mjs.map
+"
+`;
+
+exports[`Utils Library Build with no options: index.mjs.map 1`] = `"{"version":3,"file":"index.mjs","sources":["../src/index.ts"],"sourcesContent":["import merge from 'lodash.merge';\nexport const myMerge = (o1, o2) => merge(o1, o2);\n"],"names":["myMerge","o1","o2","merge"],"mappings":";;MACaA,OAAU,GAAA,CAACC,IAAIC,EAAOC,GAAAA,KAAAA,CAAMF,IAAIC,EAAI;;;;"}"`;
+
+exports[`Utils Library Build with no options: index.d.ts 1`] = `
+"export declare const myMerge: (o1: object, o2: object) => object;
 "
 `;

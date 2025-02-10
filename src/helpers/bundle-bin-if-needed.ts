@@ -2,7 +2,7 @@ import path from 'path';
 import { rollup, type Plugin } from 'rollup';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import swc from '@rollup/plugin-swc';
+import { swc } from 'rollup-plugin-swc3';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import json from '@rollup/plugin-json';
@@ -28,7 +28,10 @@ export const bundleBinIfNeeded = async (ctx: ContextModel) => {
         preserveExtensions: true,
       }),
       json(),
-      swc({ swc: getSwcConfig(ctx), exclude: /node_modules/ }),
+      swc({
+        ...getSwcConfig(ctx, binOutput),
+        tsconfig: ctx.tsconfigPath ?? false,
+      }),
       commonjs({ extensions: jsExtensions }),
       nodeResolve({ rootDir: options.cwd }),
     ],

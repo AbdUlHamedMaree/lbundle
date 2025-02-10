@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Enable latest features
-    "lib": ["ESNext", "DOM"],
+    "lib": ["ESNext"],
     "target": "ESNext",
     "module": "ESNext",
     "moduleDetection": "force",
@@ -10,8 +10,10 @@
 
     // Bundler mode
     "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "verbatimModuleSyntax": true,
-    "noEmit": true,
 
     // Best practices
     "strict": true,

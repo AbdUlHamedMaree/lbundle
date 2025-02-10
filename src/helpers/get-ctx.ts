@@ -23,6 +23,10 @@ export const getCtx = async (
 
   const pkg = JSON.parse(await fs.promises.readFile(pkgPath, 'utf-8')) as OptimalPkgModel;
 
+  const tsconfigPath = path.resolve(options.cwd, 'tsconfig.json');
+
+  const swcPath = path.resolve(options.cwd, '.swc');
+
   if (isNil(pkg.source) && isNil(pkg['bin:source'])) {
     throw new Error(
       '[bundle] provide source entry for you library, set `package.json` `source` or `bin:source` field'
@@ -54,6 +58,10 @@ export const getCtx = async (
 
     pkgPath,
     pkg,
+
+    swcPath: fs.existsSync(swcPath) ? swcPath : undefined,
+
+    tsconfigPath: fs.existsSync(tsconfigPath) ? tsconfigPath : undefined,
 
     isModule,
 
