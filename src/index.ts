@@ -3,7 +3,7 @@ import { bundleBinIfNeeded } from './helpers/bundle-bin-if-needed';
 import type { OptionsModel } from './models/options';
 import { getCtx } from './helpers/get-ctx';
 
-export const lbundle = async (baseOptions: Partial<OptionsModel>) => {
+export const lbundle = async (baseOptions: Partial<OptionsModel>): Promise<void> => {
   const ctx = await getCtx(baseOptions);
 
   await Promise.all([bundleLibIfNeeded(ctx), bundleBinIfNeeded(ctx)]);
