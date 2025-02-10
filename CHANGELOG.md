@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.1...v1.3.2) (2025-02-10)
+
+
+### Bug Fixes
+
+* **lib:** default export with cjs bundle ([c0aeceb](https://github.com/AbdUlHamedMaree/lbundle/commit/c0aeceb05852425e794ec93cd5b10487743500d8))
+
 ## [1.3.1](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.0...v1.3.1) (2024-05-10)
 
 
