@@ -1,3 +1,10 @@
+## [1.3.3](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.2...v1.3.3) (2025-03-05)
+
+
+### Bug Fixes
+
+* **bin:** support mjs bins ([79e5647](https://github.com/AbdUlHamedMaree/lbundle/commit/79e5647936952507faa80f97b5ed26bc27770071))
+
 ## [1.3.2](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.1...v1.3.2) (2025-02-10)
 
 
