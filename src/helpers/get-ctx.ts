@@ -38,7 +38,7 @@ export const getCtx = async (
   const globalName = pascalCase(pkg.name);
 
   const libOutputs = getLibOutputs({ pkg, globalName, options, isModule });
-  const binOutput = getBinOutput({ pkg, options });
+  const binOutput = getBinOutput({ pkg, options, isModule });
 
   const cssFilename = getCSSFilename({ pkg });
 

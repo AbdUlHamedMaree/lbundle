@@ -44,7 +44,7 @@
   "bin:source": "./src/cli.ts",
   "types": "./dist/lbundle.d.ts",
   "bin": {
-    "lbundle": "./dist/cli.js"
+    "lbundle": "./dist/cli.mjs"
   },
   "files": [
     "dist"
