@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.3...v1.3.4) (2025-03-06)
+
+
+### Bug Fixes
+
+* exports fields fix ([328320e](https://github.com/AbdUlHamedMaree/lbundle/commit/328320e96651f4c1225cdb4e134030ff4abececf))
+
 ## [1.3.3](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.2...v1.3.3) (2025-03-05)
 
 
