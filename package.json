@@ -30,19 +30,26 @@
   ],
   "exports": {
     ".": {
-      "require": "./dist/lbundle.js",
-      "import": "./dist/lbundle.mjs",
-      "node": "./dist/lbundle.js",
-      "types": "./dist/lbundle.d.ts",
-      "default": "./dist/lbundle.js"
+      "browser": {
+        "require": "./dist/index.js",
+        "import": "./dist/index.mjs"
+      },
+      "node": {
+        "require": "./dist/index.js",
+        "import": "./dist/index.mjs"
+      },
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/lbundle.js",
-  "module": "./dist/lbundle.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "source": "./src/index.ts",
   "bin:source": "./src/cli.ts",
-  "types": "./dist/lbundle.d.ts",
+  "types": "./dist/index.d.ts",
   "bin": {
     "lbundle": "./dist/cli.mjs"
   },
