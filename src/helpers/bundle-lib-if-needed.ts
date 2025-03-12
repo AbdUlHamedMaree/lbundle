@@ -10,10 +10,10 @@ import postcss from 'rollup-plugin-postcss';
 import { getSwcConfig } from './get-swc-config';
 import { jsExtensions } from '../constants/js-extensions';
 import type { ContextModel } from '../models/context';
-import { stylesExtensions } from '../constants/styles-extensions';
 import { isEmptyArray, isNil, isString, isStringFull } from '../utils/checks';
 import typescript from '@rollup/plugin-typescript';
 import { getRollupTypescriptConfig } from './get-rollup-typescript-config';
+import { stylesExtensions } from '../constants/styles-extensions';
 
 export const bundleLibIfNeeded = async (ctx: ContextModel) => {
   const { pkg, options, libOutputs, pkgPath, resolvedSource } = ctx;
@@ -43,7 +43,10 @@ export const bundleLibIfNeeded = async (ctx: ContextModel) => {
             tsconfig: ctx.tsconfigPath ?? false,
           }),
           commonjs({ extensions: jsExtensions }),
-          nodeResolve({ rootDir: options.cwd }),
+          nodeResolve({
+            rootDir: options.cwd,
+            extensions: [...jsExtensions, ...stylesExtensions],
+          }),
           isString(pkg.types) &&
             isStringFull(pkg.types) &&
             typescript(getRollupTypescriptConfig(ctx)),

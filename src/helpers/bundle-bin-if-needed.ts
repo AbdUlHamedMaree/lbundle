@@ -11,6 +11,7 @@ import { getSwcConfig } from './get-swc-config';
 import { jsExtensions } from '../constants/js-extensions';
 import type { ContextModel } from '../models/context';
 import { isNil } from '../utils/checks';
+import { stylesExtensions } from '../constants/styles-extensions';
 
 export const bundleBinIfNeeded = async (ctx: ContextModel) => {
   const { pkg, pkgPath, options, binOutput } = ctx;
@@ -33,7 +34,10 @@ export const bundleBinIfNeeded = async (ctx: ContextModel) => {
         tsconfig: ctx.tsconfigPath ?? false,
       }),
       commonjs({ extensions: jsExtensions }),
-      nodeResolve({ rootDir: options.cwd }),
+      nodeResolve({
+        rootDir: options.cwd,
+        extensions: [...jsExtensions, ...stylesExtensions],
+      }),
     ],
   });
 
