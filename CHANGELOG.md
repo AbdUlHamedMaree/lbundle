@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.4...v1.3.5) (2025-03-12)
+
+
+### Bug Fixes
+
+* **postcss:** supports exports field in CSS files ([17dbff1](https://github.com/AbdUlHamedMaree/lbundle/commit/17dbff104da370d74e3130faff4936cadc655583))
+
 ## [1.3.4](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.3...v1.3.4) (2025-03-06)
 
 
