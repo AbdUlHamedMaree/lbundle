@@ -14,6 +14,7 @@ import { isEmptyArray, isNil, isString, isStringFull } from '../utils/checks';
 import typescript from '@rollup/plugin-typescript';
 import { getRollupTypescriptConfig } from './get-rollup-typescript-config';
 import { stylesExtensions } from '../constants/styles-extensions';
+import postcssImport from 'postcss-import';
 
 export const bundleLibIfNeeded = async (ctx: ContextModel) => {
   const { pkg, options, libOutputs, pkgPath, resolvedSource } = ctx;
@@ -28,7 +29,11 @@ export const bundleLibIfNeeded = async (ctx: ContextModel) => {
           postcss({
             extract: true,
             extensions: stylesExtensions,
-            plugins: [],
+            plugins: [
+              postcssImport({
+                root: options.cwd,
+              }),
+            ],
           }),
           PeerDepsExternalPlugin({
             includeDependencies: true,
