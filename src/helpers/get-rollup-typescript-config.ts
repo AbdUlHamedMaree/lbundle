@@ -25,6 +25,13 @@ export const getRollupTypescriptConfig = ({
     rootDir: resolvedSource ? path.dirname(resolvedSource) : undefined,
 
     sourceMap: false,
+    exclude: [
+      '**/__tests__/**',
+      '**/*.test.*',
+      '**/*.spec.*',
+      '**/*.stories.*',
+      '**/*.mock.*',
+    ],
 
     ...declarationOptions,
   };

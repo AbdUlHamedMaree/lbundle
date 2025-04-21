@@ -20,8 +20,7 @@ export const getLibraryCleanerAndBuilder =
       ['bun', '--bun', './src/cli.ts', '--cwd', `./test/${libDir}`, ...args],
       {
         cwd: rootDir,
-        stdout: 'inherit',
-        stderr: 'inherit',
+        stdio: ['inherit', 'inherit', 'inherit'],
       }
     );
 

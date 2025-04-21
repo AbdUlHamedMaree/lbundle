@@ -5,7 +5,6 @@ import { swc } from 'rollup-plugin-swc3';
 import { typescriptPaths } from 'rollup-plugin-typescript-paths';
 import PeerDepsExternalPlugin from 'rollup-plugin-peer-deps-external';
 import json from '@rollup/plugin-json';
-import postcss from 'rollup-plugin-postcss';
 
 import { getSwcConfig } from './get-swc-config';
 import { jsExtensions } from '../constants/js-extensions';
@@ -14,7 +13,7 @@ import { isEmptyArray, isNil, isString, isStringFull } from '../utils/checks';
 import typescript from '@rollup/plugin-typescript';
 import { getRollupTypescriptConfig } from './get-rollup-typescript-config';
 import { stylesExtensions } from '../constants/styles-extensions';
-import postcssImport from 'postcss-import';
+import { getRollupStylesPlugin } from './get-rollup-styles-plugin';
 
 export const bundleLibIfNeeded = async (ctx: ContextModel) => {
   const { pkg, options, libOutputs, pkgPath, resolvedSource } = ctx;
@@ -26,15 +25,7 @@ export const bundleLibIfNeeded = async (ctx: ContextModel) => {
       const bundle = await rollup({
         input: resolvedSource,
         plugins: [
-          postcss({
-            extract: true,
-            extensions: stylesExtensions,
-            plugins: [
-              postcssImport({
-                root: options.cwd,
-              }),
-            ],
-          }),
+          getRollupStylesPlugin(ctx),
           PeerDepsExternalPlugin({
             includeDependencies: true,
             packageJsonPath: pkgPath,
