@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.2...v1.5.3) (2025-04-22)
+
+
+### Bug Fixes
+
+* better handle for css file name ([f9faa42](https://github.com/AbdUlHamedMaree/lbundle/commit/f9faa4266e08263107fb962f5881765416e1561c))
+
 ## [1.5.2](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.1...v1.5.2) (2025-04-22)
 
 
