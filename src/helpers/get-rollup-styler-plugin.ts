@@ -25,15 +25,15 @@ export const getRollupStylerPlugin = ({
 
         const partialUrl = getUrlOfPartial(url);
 
-        const options = {
+        const resolverOptions = {
           caller: 'Sass importer',
           basedirs: [path.dirname(importer)],
           extensions: stylesExtensions,
-          packageFilter: packageFilterBuilder({ conditions }),
+          packageFilter: packageFilterBuilder(url, { conditions }),
         };
 
         try {
-          return finalize(resolveSync([partialUrl, url], options));
+          return finalize(resolveSync([partialUrl, url], resolverOptions));
         } catch {
           return null;
         }

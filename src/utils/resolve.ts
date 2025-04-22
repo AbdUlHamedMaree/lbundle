@@ -36,16 +36,19 @@ interface PackageFilterBuilderOpts {
   conditions?: string[];
 }
 
-type PackageFilterBuilderFn = (opts?: PackageFilterBuilderOpts) => PackageFilterFn;
+type PackageFilterBuilderFn = (
+  path?: string,
+  opts?: PackageFilterBuilderOpts
+) => PackageFilterFn;
 
-export const packageFilterBuilder: PackageFilterBuilderFn = (opts = {}) => {
+export const packageFilterBuilder: PackageFilterBuilderFn = (path = '.', opts = {}) => {
   const conditions = opts.conditions ?? ['style', 'import', 'require'];
   const fields = opts.fields ?? ['style', 'module', 'main'];
 
   return pkg => {
     // Check `exports` fields
     try {
-      const resolvedExport = resolveExports(pkg, '.', { conditions, unsafe: true });
+      const resolvedExport = resolveExports(pkg, path, { conditions, unsafe: true });
 
       if (typeof resolvedExport === 'string') {
         pkg.main = resolvedExport;
@@ -83,7 +86,16 @@ const defaultOpts: ResolveDefaultOpts = {
 
 const resolverSync = (id: string, options: SyncOpts = {}): string | undefined => {
   try {
-    return resolver.sync(id, options);
+    return resolver.sync(id, {
+      ...options,
+      pathFilter: (pkg, _path, relativePath) => {
+        const result = resolveExports(pkg, relativePath);
+
+        if (result) return result[0];
+
+        return '';
+      },
+    });
   } catch {
     return;
   }
