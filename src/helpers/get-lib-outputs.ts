@@ -46,7 +46,7 @@ export const getLibOutputs = ({
         entryFileNames,
         preserveModules,
         assetFileNames: ({ names }) => {
-          if (isString(cssFilename) && names.includes(cssFilename)) {
+          if (isString(cssFilename) && names.some(name => cssFilename.includes(name))) {
             return cssFilename;
           }
 
