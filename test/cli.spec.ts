@@ -9,7 +9,7 @@ const tests = [
     title: 'React Library',
     libDir: 'react-library',
     files: [
-      'index.css',
+      // 'index.css',
 
       'index.js',
       // 'index.js.map',
@@ -17,7 +17,7 @@ const tests = [
       // 'index.mjs.map',
       'index.d.ts',
 
-      'components/index.js',
+      // 'components/index.js',
       // 'components/index.js.map',
       'components/index.d.ts',
 

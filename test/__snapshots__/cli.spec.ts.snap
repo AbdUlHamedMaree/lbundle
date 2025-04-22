@@ -354,9 +354,10 @@ template {
 body {
   background-color: green;
 }
-.styles-module_button__Gq-i7 {
+.styles_module_button__0787f025 {
   background-color: blue;
-}"
+}
+/*# sourceMappingURL=index.css.map */"
 `;
 
 exports[`React Library Build with no options: index.js 1`] = `
@@ -456,12 +457,12 @@ var styles_module = require('../../_virtual/styles.module.scss.js');
 
 exports[`React Library Build with no options: components/button/index.mjs 1`] = `
 "import { jsx } from 'react/jsx-runtime';
-import styles from './styles.module.scss.mjs';
+import modules_efc4e723 from './styles.module.scss.mjs';
 
 const Button = (param)=>{
     let { children } = param;
     return jsx("button", {
-        className: styles.button,
+        className: modules_efc4e723.button,
         children: children
     });
 };

@@ -37,10 +37,10 @@ export const getCtx = async (
 
   const globalName = pascalCase(pkg.name);
 
-  const libOutputs = getLibOutputs({ pkg, globalName, options, isModule });
-  const binOutput = getBinOutput({ pkg, options, isModule });
+  const cssFilename = getCSSFilename({ pkg }) ?? 'index.css';
 
-  const cssFilename = getCSSFilename({ pkg });
+  const libOutputs = getLibOutputs({ pkg, globalName, options, isModule, cssFilename });
+  const binOutput = getBinOutput({ pkg, options, isModule });
 
   const resolvedSource = pkg.source ? path.resolve(options.cwd, pkg.source) : undefined;
   const resolvedBinSource = pkg['bin:source']

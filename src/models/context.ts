@@ -26,5 +26,5 @@ export type ContextModel = {
   libOutputs: OutputOptions[];
   binOutput?: OutputOptions;
 
-  cssFilename?: string;
+  cssFilename: string;
 };

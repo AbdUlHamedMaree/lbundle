@@ -10,9 +10,10 @@ export const getLibOutputs = ({
   globalName,
   pkg,
   isModule,
+  cssFilename,
 }: Pick<
   ContextModel,
-  'options' | 'pkg' | 'isModule' | 'globalName'
+  'options' | 'pkg' | 'isModule' | 'globalName' | 'cssFilename'
 >): OutputOptions[] => {
   const map = new Map<ModuleFormat, OutputOptions>();
 
@@ -44,6 +45,13 @@ export const getLibOutputs = ({
         dir,
         entryFileNames,
         preserveModules,
+        assetFileNames: ({ names }) => {
+          if (isString(cssFilename) && names.includes(cssFilename)) {
+            return cssFilename;
+          }
+
+          return 'assets/[name]-[hash][extname]';
+        },
 
         esModule: format === 'cjs',
 

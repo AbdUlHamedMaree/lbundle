@@ -1,12 +1,18 @@
 import type { ContextModel } from '../models/context';
 import { stylesExtensions } from '../constants/styles-extensions';
-import postcss from '../forks/rollup-plugin-postcss/src/index.js';
+import styles from 'rollup-plugin-styler';
 import postcssImport from 'postcss-import';
 
-export const getRollupStylesPlugin = ({ options }: Pick<ContextModel, 'options'>) =>
-  postcss({
-    extract: true,
+export const getRollupStylerPlugin = ({
+  options,
+  cssFilename,
+}: Pick<ContextModel, 'options' | 'cssFilename'>) =>
+  styles({
+    autoModules: true,
     extensions: stylesExtensions,
+    mode: ['extract', cssFilename],
+    sourceMap: true,
+    to: cssFilename,
     plugins: [
       postcssImport({
         root: options.cwd,
