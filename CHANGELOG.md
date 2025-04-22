@@ -1,3 +1,10 @@
+## [1.5.4](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.3...v1.5.4) (2025-04-22)
+
+
+### Bug Fixes
+
+* normalize exports ([78d3adc](https://github.com/AbdUlHamedMaree/lbundle/commit/78d3adcda677803ef159754d9e5da7f4b260558d))
+
 ## [1.5.3](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.2...v1.5.3) (2025-04-22)
 
 

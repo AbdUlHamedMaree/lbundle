@@ -1,6 +1,6 @@
 {
   "name": "lbundle",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "private": false,
   "description": "Small zero-configuration bundler build on top of Rollup.js and SWC for NPM libraries",
   "keywords": [
