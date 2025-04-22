@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.4.1...v1.5.0) (2025-04-22)
+
+
+### Features
+
+* support scss imports without `~` ([a4de0dc](https://github.com/AbdUlHamedMaree/lbundle/commit/a4de0dc176a4f227c5c34a1a70ef277fe604e103))
+
 ## [1.4.1](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.4.0...v1.4.1) (2025-04-22)
 
 
