@@ -1,3 +1,11 @@
+## [1.4.1](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.4.0...v1.4.1) (2025-04-22)
+
+
+### Bug Fixes
+
+* importing scss/sass files ([e996baa](https://github.com/AbdUlHamedMaree/lbundle/commit/e996baa913906981f9bc6373d2219bcfd8ad50a4))
+* replacing unmaintained postcss package ([2dc1db9](https://github.com/AbdUlHamedMaree/lbundle/commit/2dc1db94f46ffbdd0e947fa870331272838f9ef4))
+
 # [1.4.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.3.5...v1.4.0) (2025-03-19)
 
 
