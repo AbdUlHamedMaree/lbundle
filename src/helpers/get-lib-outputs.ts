@@ -46,8 +46,10 @@ export const getLibOutputs = ({
         entryFileNames,
         preserveModules,
         assetFileNames: ({ names }) => {
-          if (isString(cssFilename) && names.some(name => cssFilename.includes(name))) {
-            return cssFilename;
+          const normalizedCssFilename = path.posix.normalize(cssFilename);
+
+          if (names.includes(normalizedCssFilename)) {
+            return normalizedCssFilename;
           }
 
           return 'assets/[name]-[hash][extname]';
