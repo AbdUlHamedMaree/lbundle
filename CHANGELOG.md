@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.0...v1.5.1) (2025-04-22)
+
+
+### Bug Fixes
+
+* add missing package ([f816c9c](https://github.com/AbdUlHamedMaree/lbundle/commit/f816c9cd8b3df9fff02b4a251902915d47836815))
+
 # [1.5.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.4.1...v1.5.0) (2025-04-22)
 
 
