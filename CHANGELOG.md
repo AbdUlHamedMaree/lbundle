@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.1...v1.5.2) (2025-04-22)
+
+
+### Bug Fixes
+
+* add support for scss files export field ([9f374b4](https://github.com/AbdUlHamedMaree/lbundle/commit/9f374b4ea357f3095731f452b29a96d05c4eec09))
+
 ## [1.5.1](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.0...v1.5.1) (2025-04-22)
 
 
