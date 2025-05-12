@@ -1,5 +1,5 @@
 import { type ModuleFormat, type OutputOptions } from 'rollup';
-import { isString } from '../utils/checks';
+import { isDefined, isString } from '../utils/checks';
 import { getExportsFilenames } from '../utils/get-exports-filenames';
 import { getFilenameOutputFormat } from '../utils/get-filename-output-format';
 import path from 'path';
@@ -49,6 +49,9 @@ export const getLibOutputs = ({
           const normalizedCssFilename = path.posix.normalize(cssFilename);
 
           if (names.includes(normalizedCssFilename)) {
+            if (isDefined(dir))
+              return path.relative(dir, path.resolve(options.cwd, normalizedCssFilename));
+
             return normalizedCssFilename;
           }
 
