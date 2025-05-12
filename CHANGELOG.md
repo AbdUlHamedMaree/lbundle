@@ -1,3 +1,10 @@
+## [1.5.5](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.4...v1.5.5) (2025-05-12)
+
+
+### Bug Fixes
+
+* wrong css file placement ([0d336f1](https://github.com/AbdUlHamedMaree/lbundle/commit/0d336f1fff235c97171de4b88bca021bab8b87b1))
+
 ## [1.5.4](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.3...v1.5.4) (2025-04-22)
 
 
