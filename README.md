@@ -102,6 +102,51 @@ lbundle
 
 And That's it, it will generate the bundle for you at the target directory.
 
+## 🖼️ Asset Imports
+
+lbundle provides comprehensive support for importing various types of assets with automatic optimization and TypeScript support.
+
+### Supported Asset Types
+
+- **Images**: `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.avif`, `.ico`, `.bmp`, `.tiff`, `.tif`
+- **Videos**: `.mp4`, `.webm`, `.ogg`, `.avi`, `.mov`, `.wmv`, `.flv`, `.mkv`
+- **Audio**: `.mp3`, `.wav`, `.aac`, `.flac`, `.m4a`
+- **Fonts**: `.woff`, `.woff2`, `.eot`, `.ttf`, `.otf`
+- **Documents**: `.pdf`, `.doc`, `.docx`, `.txt`, `.md`
+- **SVGs**: Special dual support for React components and URLs
+
+### Usage Example
+
+```typescript
+// Import images as URLs
+import logo from './assets/logo.png';           // Small: inlined as base64
+import banner from './assets/large-banner.png'; // Large: emitted as file
+
+// Import SVGs as React components
+import { ReactComponent as Icon } from './assets/icon.svg';
+
+// Use in your components
+function MyComponent() {
+  return (
+    <div>
+      <img src={logo} alt="Logo" />
+      <img src={banner} alt="Banner" />
+      <Icon className="icon" title="My Icon" />
+    </div>
+  );
+}
+```
+
+### TypeScript Support
+
+Add this reference to your type declarations file:
+
+```typescript
+/// <reference types="lbundle/modules" />
+```
+
+For more details, see [ASSET_TYPES.md](./ASSET_TYPES.md).
+
 ## ✨ Features
 
 - 🤩 all in 1: supports bundling your library and binary into all known formats (`esm`, `cjs`, `umd`, `amd` and `iife`), and generate declarations files as well.
@@ -119,6 +164,7 @@ And That's it, it will generate the bundle for you at the target directory.
 - 🗺️ path alias: supports TS `path` and `baseUrl` transformation.
 - 📤 auto externals: look for your `dependencies` and `peerDependencies` and exclude them from the bundle.
 - 🪛 json: supports importing `json` files in your code.
+- 🖼️ assets: comprehensive support for importing images, videos, audio, fonts, documents, and SVGs with React component support.
 - 📦 polyfills: supports adding polyfills to the bundle if you're using latest ES features (make sure to have `core-js` installed)
 
 ## 🛣️ Roadmap

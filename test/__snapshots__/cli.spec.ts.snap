@@ -14,6 +14,7 @@ module.exports = index;
 
 exports[`React Library Build with no options: index.mjs 1`] = `
 "export { Button } from './components/button/index.mjs';
+export { AssetShowcase } from './components/asset-showcase/index.mjs';
 //# sourceMappingURL=index.mjs.map
 "
 `;
@@ -26,6 +27,7 @@ export * from './components';
 
 exports[`React Library Build with no options: components/index.d.ts 1`] = `
 "export * from './button';
+export * from './asset-showcase';
 "
 `;
 
@@ -161,5 +163,901 @@ export { myMerge };
 
 exports[`Utils Library Build with no options: index.d.ts 1`] = `
 "export declare const myMerge: (o1: object, o2: object) => object;
+"
+`;
+
+exports[`React Library Build with no options: components/asset-showcase/index.js 1`] = `
+"'use strict';
+
+var index = require('../../_virtual/index4.js');
+var require$$0 = require('react/jsx-runtime');
+var placeholder = require('../../_virtual/placeholder.png.js');
+var hero = require('../../_virtual/hero.jpg.js');
+var icon = require('../../_virtual/icon.webp.js');
+var largeBanner = require('../../_virtual/large-banner.png.js');
+var logo = require('../../_virtual/logo.svg.js');
+var iconHome = require('../../_virtual/icon-home.svg.js');
+var iconStar = require('../../_virtual/icon-star.svg.js');
+var largeGraphic = require('../../_virtual/large-graphic.svg.js');
+var demo = require('../../_virtual/demo.mp4.js');
+var sound = require('../../_virtual/sound.mp3.js');
+var customFont = require('../../_virtual/custom-font.woff2.js');
+var manual = require('../../_virtual/manual.pdf.js');
+
+(function (exports) {
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	Object.defineProperty(exports, "AssetShowcase", {
+	    enumerable: true,
+	    get: function() {
+	        return AssetShowcase;
+	    }
+	});
+	const _jsxruntime = require$$0;
+	const _placeholderpng = /*#__PURE__*/ _interop_require_default(placeholder);
+	const _herojpg = /*#__PURE__*/ _interop_require_default(hero);
+	const _iconwebp = /*#__PURE__*/ _interop_require_default(icon);
+	const _largebannerpng = /*#__PURE__*/ _interop_require_default(largeBanner);
+	const _logosvg = /*#__PURE__*/ _interop_require_wildcard(logo);
+	const _iconhomesvg = iconHome;
+	const _iconstarsvg = iconStar;
+	const _largegraphicsvg = largeGraphic;
+	const _demomp4 = /*#__PURE__*/ _interop_require_default(demo);
+	const _soundmp3 = /*#__PURE__*/ _interop_require_default(sound);
+	const _customfontwoff2 = /*#__PURE__*/ _interop_require_default(customFont);
+	const _manualpdf = /*#__PURE__*/ _interop_require_default(manual);
+	function _interop_require_default(obj) {
+	    return obj && obj.__esModule ? obj : {
+	        default: obj
+	    };
+	}
+	function _getRequireWildcardCache(nodeInterop) {
+	    if (typeof WeakMap !== "function") return null;
+	    var cacheBabelInterop = new WeakMap();
+	    var cacheNodeInterop = new WeakMap();
+	    return (_getRequireWildcardCache = function(nodeInterop) {
+	        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+	    })(nodeInterop);
+	}
+	function _interop_require_wildcard(obj, nodeInterop) {
+	    if (obj && obj.__esModule) {
+	        return obj;
+	    }
+	    if (obj === null || typeof obj !== "object" && typeof obj !== "function") {
+	        return {
+	            default: obj
+	        };
+	    }
+	    var cache = _getRequireWildcardCache(nodeInterop);
+	    if (cache && cache.has(obj)) {
+	        return cache.get(obj);
+	    }
+	    var newObj = {
+	        __proto__: null
+	    };
+	    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+	    for(var key in obj){
+	        if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+	            var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+	            if (desc && (desc.get || desc.set)) {
+	                Object.defineProperty(newObj, key, desc);
+	            } else {
+	                newObj[key] = obj[key];
+	            }
+	        }
+	    }
+	    newObj.default = obj;
+	    if (cache) {
+	        cache.set(obj, newObj);
+	    }
+	    return newObj;
+	}
+	const AssetShowcase = (param)=>{
+	    let { className } = param;
+	    return (0, _jsxruntime.jsxs)("div", {
+	        className: className,
+	        "data-testid": 'asset-showcase',
+	        children: [
+	            (0, _jsxruntime.jsx)("h2", {
+	                children: "Asset Showcase"
+	            }),
+	            (0, _jsxruntime.jsxs)("section", {
+	                children: [
+	                    (0, _jsxruntime.jsx)("h3", {
+	                        children: "Images"
+	                    }),
+	                    (0, _jsxruntime.jsxs)("div", {
+	                        style: {
+	                            display: 'flex',
+	                            gap: '10px',
+	                            alignItems: 'center',
+	                            flexWrap: 'wrap'
+	                        },
+	                        children: [
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                children: [
+	                                    (0, _jsxruntime.jsx)("img", {
+	                                        src: _placeholderpng.default,
+	                                        alt: 'Placeholder PNG',
+	                                        width: '20',
+	                                        height: '20'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Small PNG (inlined)"
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                children: [
+	                                    (0, _jsxruntime.jsx)("img", {
+	                                        src: _herojpg.default,
+	                                        alt: 'Hero JPG',
+	                                        width: '20',
+	                                        height: '20'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Small JPG (inlined)"
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                children: [
+	                                    (0, _jsxruntime.jsx)("img", {
+	                                        src: _iconwebp.default,
+	                                        alt: 'Icon WebP',
+	                                        width: '20',
+	                                        height: '20'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Small WebP (inlined)"
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                children: [
+	                                    (0, _jsxruntime.jsx)("img", {
+	                                        src: _largebannerpng.default,
+	                                        alt: 'Large Banner',
+	                                        width: '40',
+	                                        height: '40'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Large PNG (emitted as file)"
+	                                    })
+	                                ]
+	                            })
+	                        ]
+	                    })
+	                ]
+	            }),
+	            (0, _jsxruntime.jsxs)("section", {
+	                children: [
+	                    (0, _jsxruntime.jsx)("h3", {
+	                        children: "SVG Icons"
+	                    }),
+	                    (0, _jsxruntime.jsxs)("div", {
+	                        style: {
+	                            display: 'flex',
+	                            gap: '10px',
+	                            alignItems: 'center',
+	                            flexWrap: 'wrap'
+	                        },
+	                        children: [
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                style: {
+	                                    textAlign: 'center'
+	                                },
+	                                children: [
+	                                    (0, _jsxruntime.jsx)(_logosvg.ReactComponent, {
+	                                        width: '24',
+	                                        height: '24',
+	                                        title: 'Logo Icon'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Small SVG"
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                style: {
+	                                    textAlign: 'center'
+	                                },
+	                                children: [
+	                                    (0, _jsxruntime.jsx)(_iconhomesvg.ReactComponent, {
+	                                        width: '24',
+	                                        height: '24',
+	                                        title: 'Home Icon'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Small SVG"
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                style: {
+	                                    textAlign: 'center'
+	                                },
+	                                children: [
+	                                    (0, _jsxruntime.jsx)(_iconstarsvg.ReactComponent, {
+	                                        width: '24',
+	                                        height: '24',
+	                                        title: 'Star Icon'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Small SVG"
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                style: {
+	                                    textAlign: 'center'
+	                                },
+	                                children: [
+	                                    (0, _jsxruntime.jsx)(_largegraphicsvg.ReactComponent, {
+	                                        width: '60',
+	                                        height: '60',
+	                                        title: 'Large Graphic'
+	                                    }),
+	                                    (0, _jsxruntime.jsx)("br", {}),
+	                                    (0, _jsxruntime.jsx)("small", {
+	                                        children: "Large SVG (emitted as file)"
+	                                    })
+	                                ]
+	                            })
+	                        ]
+	                    }),
+	                    (0, _jsxruntime.jsx)("div", {
+	                        style: {
+	                            marginTop: '10px'
+	                        },
+	                        children: (0, _jsxruntime.jsxs)("p", {
+	                            children: [
+	                                "SVG as image URL:",
+	                                ' ',
+	                                (0, _jsxruntime.jsx)("img", {
+	                                    src: _logosvg.default,
+	                                    alt: 'Logo as image',
+	                                    width: '20',
+	                                    height: '20'
+	                                })
+	                            ]
+	                        })
+	                    })
+	                ]
+	            }),
+	            (0, _jsxruntime.jsxs)("section", {
+	                children: [
+	                    (0, _jsxruntime.jsx)("h3", {
+	                        children: "Media"
+	                    }),
+	                    (0, _jsxruntime.jsx)("div", {
+	                        children: (0, _jsxruntime.jsxs)("video", {
+	                            width: '200',
+	                            height: '100',
+	                            controls: true,
+	                            children: [
+	                                (0, _jsxruntime.jsx)("source", {
+	                                    src: _demomp4.default,
+	                                    type: 'video/mp4'
+	                                }),
+	                                "Your browser does not support the video tag."
+	                            ]
+	                        })
+	                    }),
+	                    (0, _jsxruntime.jsx)("div", {
+	                        style: {
+	                            marginTop: '10px'
+	                        },
+	                        children: (0, _jsxruntime.jsxs)("audio", {
+	                            controls: true,
+	                            children: [
+	                                (0, _jsxruntime.jsx)("source", {
+	                                    src: _soundmp3.default,
+	                                    type: 'audio/mpeg'
+	                                }),
+	                                "Your browser does not support the audio element."
+	                            ]
+	                        })
+	                    })
+	                ]
+	            }),
+	            (0, _jsxruntime.jsxs)("section", {
+	                children: [
+	                    (0, _jsxruntime.jsx)("h3", {
+	                        children: "Other Assets"
+	                    }),
+	                    (0, _jsxruntime.jsxs)("div", {
+	                        children: [
+	                            (0, _jsxruntime.jsxs)("p", {
+	                                children: [
+	                                    "Custom font URL: ",
+	                                    (0, _jsxruntime.jsx)("code", {
+	                                        children: _customfontwoff2.default
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("p", {
+	                                children: [
+	                                    "Manual PDF:",
+	                                    (0, _jsxruntime.jsx)("a", {
+	                                        href: _manualpdf.default,
+	                                        download: 'manual.pdf',
+	                                        style: {
+	                                            marginLeft: '5px'
+	                                        },
+	                                        children: "Download Manual"
+	                                    })
+	                                ]
+	                            })
+	                        ]
+	                    })
+	                ]
+	            }),
+	            (0, _jsxruntime.jsxs)("section", {
+	                style: {
+	                    marginTop: '20px',
+	                    fontSize: '12px',
+	                    color: '#666'
+	                },
+	                children: [
+	                    (0, _jsxruntime.jsx)("h4", {
+	                        children: "Asset URLs (for testing)"
+	                    }),
+	                    (0, _jsxruntime.jsxs)("div", {
+	                        style: {
+	                            display: 'grid',
+	                            gridTemplateColumns: '1fr 1fr',
+	                            gap: '10px'
+	                        },
+	                        children: [
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                children: [
+	                                    (0, _jsxruntime.jsx)("h5", {
+	                                        children: "Small Assets (Inlined as base64)"
+	                                    }),
+	                                    (0, _jsxruntime.jsxs)("ul", {
+	                                        style: {
+	                                            listStyle: 'none',
+	                                            padding: 0
+	                                        },
+	                                        children: [
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "PNG:"
+	                                                    }),
+	                                                    " ",
+	                                                    _placeholderpng.default.substring(0, 50),
+	                                                    "..."
+	                                                ]
+	                                            }),
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "JPG:"
+	                                                    }),
+	                                                    " ",
+	                                                    _herojpg.default.substring(0, 50),
+	                                                    "..."
+	                                                ]
+	                                            }),
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "WebP:"
+	                                                    }),
+	                                                    " ",
+	                                                    _iconwebp.default.substring(0, 50),
+	                                                    "..."
+	                                                ]
+	                                            }),
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "SVG URL:"
+	                                                    }),
+	                                                    " ",
+	                                                    _logosvg.default.substring(0, 50),
+	                                                    "..."
+	                                                ]
+	                                            })
+	                                        ]
+	                                    })
+	                                ]
+	                            }),
+	                            (0, _jsxruntime.jsxs)("div", {
+	                                children: [
+	                                    (0, _jsxruntime.jsx)("h5", {
+	                                        children: "Large Assets (Emitted as files)"
+	                                    }),
+	                                    (0, _jsxruntime.jsxs)("ul", {
+	                                        style: {
+	                                            listStyle: 'none',
+	                                            padding: 0
+	                                        },
+	                                        children: [
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "Large PNG:"
+	                                                    }),
+	                                                    " ",
+	                                                    _largebannerpng.default
+	                                                ]
+	                                            }),
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "Video:"
+	                                                    }),
+	                                                    " ",
+	                                                    _demomp4.default
+	                                                ]
+	                                            }),
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "Audio:"
+	                                                    }),
+	                                                    " ",
+	                                                    _soundmp3.default
+	                                                ]
+	                                            }),
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "Font:"
+	                                                    }),
+	                                                    " ",
+	                                                    _customfontwoff2.default
+	                                                ]
+	                                            }),
+	                                            (0, _jsxruntime.jsxs)("li", {
+	                                                children: [
+	                                                    (0, _jsxruntime.jsx)("strong", {
+	                                                        children: "PDF:"
+	                                                    }),
+	                                                    " ",
+	                                                    _manualpdf.default
+	                                                ]
+	                                            })
+	                                        ]
+	                                    })
+	                                ]
+	                            })
+	                        ]
+	                    })
+	                ]
+	            })
+	        ]
+	    });
+	}; 
+} (index.__exports));
+//# sourceMappingURL=index.js.map
+"
+`;
+
+exports[`React Library Build with no options: components/asset-showcase/index.mjs 1`] = `
+"import { jsxs, jsx } from 'react/jsx-runtime';
+import placeholderPng from '../../assets/placeholder.png.mjs';
+import heroJpg from '../../assets/hero.jpg.mjs';
+import iconWebp from '../../assets/icon.webp.mjs';
+import largeBanner from '../../assets/large-banner.png.mjs';
+import logoSvgUrl, { ReactComponent as ForwardRef } from '../../assets/logo.svg.mjs';
+import { ReactComponent as ForwardRef$1 } from '../../assets/icon-home.svg.mjs';
+import { ReactComponent as ForwardRef$2 } from '../../assets/icon-star.svg.mjs';
+import { ReactComponent as ForwardRef$3 } from '../../assets/large-graphic.svg.mjs';
+import demoVideo from '../../assets/demo.mp4.mjs';
+import soundMp3 from '../../assets/sound.mp3.mjs';
+import customFont from '../../assets/custom-font.woff2.mjs';
+import manualPdf from '../../assets/manual.pdf.mjs';
+
+const AssetShowcase = (param)=>{
+    let { className } = param;
+    return jsxs("div", {
+        className: className,
+        "data-testid": 'asset-showcase',
+        children: [
+            jsx("h2", {
+                children: "Asset Showcase"
+            }),
+            jsxs("section", {
+                children: [
+                    jsx("h3", {
+                        children: "Images"
+                    }),
+                    jsxs("div", {
+                        style: {
+                            display: 'flex',
+                            gap: '10px',
+                            alignItems: 'center',
+                            flexWrap: 'wrap'
+                        },
+                        children: [
+                            jsxs("div", {
+                                children: [
+                                    jsx("img", {
+                                        src: placeholderPng,
+                                        alt: 'Placeholder PNG',
+                                        width: '20',
+                                        height: '20'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Small PNG (inlined)"
+                                    })
+                                ]
+                            }),
+                            jsxs("div", {
+                                children: [
+                                    jsx("img", {
+                                        src: heroJpg,
+                                        alt: 'Hero JPG',
+                                        width: '20',
+                                        height: '20'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Small JPG (inlined)"
+                                    })
+                                ]
+                            }),
+                            jsxs("div", {
+                                children: [
+                                    jsx("img", {
+                                        src: iconWebp,
+                                        alt: 'Icon WebP',
+                                        width: '20',
+                                        height: '20'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Small WebP (inlined)"
+                                    })
+                                ]
+                            }),
+                            jsxs("div", {
+                                children: [
+                                    jsx("img", {
+                                        src: largeBanner,
+                                        alt: 'Large Banner',
+                                        width: '40',
+                                        height: '40'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Large PNG (emitted as file)"
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            jsxs("section", {
+                children: [
+                    jsx("h3", {
+                        children: "SVG Icons"
+                    }),
+                    jsxs("div", {
+                        style: {
+                            display: 'flex',
+                            gap: '10px',
+                            alignItems: 'center',
+                            flexWrap: 'wrap'
+                        },
+                        children: [
+                            jsxs("div", {
+                                style: {
+                                    textAlign: 'center'
+                                },
+                                children: [
+                                    jsx(ForwardRef, {
+                                        width: '24',
+                                        height: '24',
+                                        title: 'Logo Icon'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Small SVG"
+                                    })
+                                ]
+                            }),
+                            jsxs("div", {
+                                style: {
+                                    textAlign: 'center'
+                                },
+                                children: [
+                                    jsx(ForwardRef$1, {
+                                        width: '24',
+                                        height: '24',
+                                        title: 'Home Icon'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Small SVG"
+                                    })
+                                ]
+                            }),
+                            jsxs("div", {
+                                style: {
+                                    textAlign: 'center'
+                                },
+                                children: [
+                                    jsx(ForwardRef$2, {
+                                        width: '24',
+                                        height: '24',
+                                        title: 'Star Icon'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Small SVG"
+                                    })
+                                ]
+                            }),
+                            jsxs("div", {
+                                style: {
+                                    textAlign: 'center'
+                                },
+                                children: [
+                                    jsx(ForwardRef$3, {
+                                        width: '60',
+                                        height: '60',
+                                        title: 'Large Graphic'
+                                    }),
+                                    jsx("br", {}),
+                                    jsx("small", {
+                                        children: "Large SVG (emitted as file)"
+                                    })
+                                ]
+                            })
+                        ]
+                    }),
+                    jsx("div", {
+                        style: {
+                            marginTop: '10px'
+                        },
+                        children: jsxs("p", {
+                            children: [
+                                "SVG as image URL:",
+                                ' ',
+                                jsx("img", {
+                                    src: logoSvgUrl,
+                                    alt: 'Logo as image',
+                                    width: '20',
+                                    height: '20'
+                                })
+                            ]
+                        })
+                    })
+                ]
+            }),
+            jsxs("section", {
+                children: [
+                    jsx("h3", {
+                        children: "Media"
+                    }),
+                    jsx("div", {
+                        children: jsxs("video", {
+                            width: '200',
+                            height: '100',
+                            controls: true,
+                            children: [
+                                jsx("source", {
+                                    src: demoVideo,
+                                    type: 'video/mp4'
+                                }),
+                                "Your browser does not support the video tag."
+                            ]
+                        })
+                    }),
+                    jsx("div", {
+                        style: {
+                            marginTop: '10px'
+                        },
+                        children: jsxs("audio", {
+                            controls: true,
+                            children: [
+                                jsx("source", {
+                                    src: soundMp3,
+                                    type: 'audio/mpeg'
+                                }),
+                                "Your browser does not support the audio element."
+                            ]
+                        })
+                    })
+                ]
+            }),
+            jsxs("section", {
+                children: [
+                    jsx("h3", {
+                        children: "Other Assets"
+                    }),
+                    jsxs("div", {
+                        children: [
+                            jsxs("p", {
+                                children: [
+                                    "Custom font URL: ",
+                                    jsx("code", {
+                                        children: customFont
+                                    })
+                                ]
+                            }),
+                            jsxs("p", {
+                                children: [
+                                    "Manual PDF:",
+                                    jsx("a", {
+                                        href: manualPdf,
+                                        download: 'manual.pdf',
+                                        style: {
+                                            marginLeft: '5px'
+                                        },
+                                        children: "Download Manual"
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            jsxs("section", {
+                style: {
+                    marginTop: '20px',
+                    fontSize: '12px',
+                    color: '#666'
+                },
+                children: [
+                    jsx("h4", {
+                        children: "Asset URLs (for testing)"
+                    }),
+                    jsxs("div", {
+                        style: {
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr',
+                            gap: '10px'
+                        },
+                        children: [
+                            jsxs("div", {
+                                children: [
+                                    jsx("h5", {
+                                        children: "Small Assets (Inlined as base64)"
+                                    }),
+                                    jsxs("ul", {
+                                        style: {
+                                            listStyle: 'none',
+                                            padding: 0
+                                        },
+                                        children: [
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "PNG:"
+                                                    }),
+                                                    " ",
+                                                    placeholderPng.substring(0, 50),
+                                                    "..."
+                                                ]
+                                            }),
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "JPG:"
+                                                    }),
+                                                    " ",
+                                                    heroJpg.substring(0, 50),
+                                                    "..."
+                                                ]
+                                            }),
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "WebP:"
+                                                    }),
+                                                    " ",
+                                                    iconWebp.substring(0, 50),
+                                                    "..."
+                                                ]
+                                            }),
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "SVG URL:"
+                                                    }),
+                                                    " ",
+                                                    logoSvgUrl.substring(0, 50),
+                                                    "..."
+                                                ]
+                                            })
+                                        ]
+                                    })
+                                ]
+                            }),
+                            jsxs("div", {
+                                children: [
+                                    jsx("h5", {
+                                        children: "Large Assets (Emitted as files)"
+                                    }),
+                                    jsxs("ul", {
+                                        style: {
+                                            listStyle: 'none',
+                                            padding: 0
+                                        },
+                                        children: [
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "Large PNG:"
+                                                    }),
+                                                    " ",
+                                                    largeBanner
+                                                ]
+                                            }),
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "Video:"
+                                                    }),
+                                                    " ",
+                                                    demoVideo
+                                                ]
+                                            }),
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "Audio:"
+                                                    }),
+                                                    " ",
+                                                    soundMp3
+                                                ]
+                                            }),
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "Font:"
+                                                    }),
+                                                    " ",
+                                                    customFont
+                                                ]
+                                            }),
+                                            jsxs("li", {
+                                                children: [
+                                                    jsx("strong", {
+                                                        children: "PDF:"
+                                                    }),
+                                                    " ",
+                                                    manualPdf
+                                                ]
+                                            })
+                                        ]
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            })
+        ]
+    });
+};
+
+export { AssetShowcase };
+//# sourceMappingURL=index.mjs.map
+"
+`;
+
+exports[`React Library Build with no options: components/asset-showcase/index.d.ts 1`] = `
+"import type React from 'react';
+export interface AssetShowcaseProps {
+    className?: string;
+}
+export declare const AssetShowcase: React.FC<AssetShowcaseProps>;
 "
 `;

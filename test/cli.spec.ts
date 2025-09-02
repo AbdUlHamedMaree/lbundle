@@ -26,6 +26,12 @@ const tests = [
       'components/button/index.mjs',
       // 'components/button/index.mjs.map',
       'components/button/index.d.ts',
+
+      'components/asset-showcase/index.js',
+      // 'components/asset-showcase/index.js.map',
+      'components/asset-showcase/index.mjs',
+      // 'components/asset-showcase/index.mjs.map',
+      'components/asset-showcase/index.d.ts',
     ],
   },
   {

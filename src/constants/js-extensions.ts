@@ -1,10 +1,7 @@
 export const jsExtensions = [
-  '.mtsx',
-  '.ctsx',
-  '.tsx',
-  '.mts',
-  '.cts',
-  '.ts',
+  '.mjs',
+  '.cjs',
+  '.js',
   '.mtsx',
   '.ctsx',
   '.tsx',

@@ -13,7 +13,9 @@ import { isEmptyArray, isNil, isString, isStringFull } from '../utils/checks';
 import typescript from '@rollup/plugin-typescript';
 import { getRollupTypescriptConfig } from './get-rollup-typescript-config';
 import { stylesExtensions } from '../constants/styles-extensions';
+import { allAssetExtensions } from '../constants/asset-extensions';
 import { getRollupStylerPlugin } from './get-rollup-styler-plugin';
+import { getRollupAssetPlugins } from './get-rollup-asset-plugins';
 
 export const bundleLibIfNeeded = async (ctx: ContextModel) => {
   const { pkg, options, libOutputs, pkgPath, resolvedSource } = ctx;
@@ -33,6 +35,7 @@ export const bundleLibIfNeeded = async (ctx: ContextModel) => {
             preserveExtensions: true,
           }),
           json(),
+          ...getRollupAssetPlugins(),
           swc({
             ...getSwcConfig(ctx, output),
             tsconfig: ctx.tsconfigPath ?? false,
@@ -40,7 +43,7 @@ export const bundleLibIfNeeded = async (ctx: ContextModel) => {
           commonjs({ extensions: jsExtensions }),
           nodeResolve({
             rootDir: options.cwd,
-            extensions: [...jsExtensions, ...stylesExtensions],
+            extensions: [...jsExtensions, ...stylesExtensions, ...allAssetExtensions],
           }),
           getRollupStylerPlugin(ctx),
           isString(pkg.types) &&

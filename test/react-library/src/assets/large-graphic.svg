@@ -1,0 +1,352 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="checkerboard" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="10" height="10" fill="#ff6b6b"/>
+      <rect x="10" y="10" width="10" height="10" fill="#ff6b6b"/>
+      <rect x="10" y="0" width="10" height="10" fill="#4ecdc4"/>
+      <rect x="0" y="10" width="10" height="10" fill="#4ecdc4"/>
+    </pattern>
+  </defs>
+  
+  <!-- Large background with pattern -->
+  <rect width="200" height="200" fill="url(#checkerboard)"/>
+  
+  <!-- Add many elements to increase file size -->
+  
+    <circle cx="20" cy="20" r="8" 
+            fill="#a5df6d" 
+            opacity="0.7"/>
+  
+    <circle cx="38" cy="20" r="8" 
+            fill="#7ed99e" 
+            opacity="0.7"/>
+  
+    <circle cx="56" cy="20" r="8" 
+            fill="#35de33" 
+            opacity="0.7"/>
+  
+    <circle cx="74" cy="20" r="8" 
+            fill="#e236de" 
+            opacity="0.7"/>
+  
+    <circle cx="92" cy="20" r="8" 
+            fill="#b0ab36" 
+            opacity="0.7"/>
+  
+    <circle cx="110" cy="20" r="8" 
+            fill="#4d09fd" 
+            opacity="0.7"/>
+  
+    <circle cx="128" cy="20" r="8" 
+            fill="#d70ac9" 
+            opacity="0.7"/>
+  
+    <circle cx="146" cy="20" r="8" 
+            fill="#0376f5" 
+            opacity="0.7"/>
+  
+    <circle cx="164" cy="20" r="8" 
+            fill="#076f2d" 
+            opacity="0.7"/>
+  
+    <circle cx="182" cy="20" r="8" 
+            fill="#e4282c" 
+            opacity="0.7"/>
+  
+    <circle cx="20" cy="38" r="8" 
+            fill="#8cbe84" 
+            opacity="0.7"/>
+  
+    <circle cx="38" cy="38" r="8" 
+            fill="#5dfc92" 
+            opacity="0.7"/>
+  
+    <circle cx="56" cy="38" r="8" 
+            fill="#85b656" 
+            opacity="0.7"/>
+  
+    <circle cx="74" cy="38" r="8" 
+            fill="#ea34b3" 
+            opacity="0.7"/>
+  
+    <circle cx="92" cy="38" r="8" 
+            fill="#687439" 
+            opacity="0.7"/>
+  
+    <circle cx="110" cy="38" r="8" 
+            fill="#6a106f" 
+            opacity="0.7"/>
+  
+    <circle cx="128" cy="38" r="8" 
+            fill="#a4aaea" 
+            opacity="0.7"/>
+  
+    <circle cx="146" cy="38" r="8" 
+            fill="#3fe45b" 
+            opacity="0.7"/>
+  
+    <circle cx="164" cy="38" r="8" 
+            fill="#8a976f" 
+            opacity="0.7"/>
+  
+    <circle cx="182" cy="38" r="8" 
+            fill="#cfc5fc" 
+            opacity="0.7"/>
+  
+    <circle cx="20" cy="56" r="8" 
+            fill="#668601" 
+            opacity="0.7"/>
+  
+    <circle cx="38" cy="56" r="8" 
+            fill="#0c2e09" 
+            opacity="0.7"/>
+  
+    <circle cx="56" cy="56" r="8" 
+            fill="#3a3da6" 
+            opacity="0.7"/>
+  
+    <circle cx="74" cy="56" r="8" 
+            fill="#636d80" 
+            opacity="0.7"/>
+  
+    <circle cx="92" cy="56" r="8" 
+            fill="#31ddb8" 
+            opacity="0.7"/>
+  
+    <circle cx="110" cy="56" r="8" 
+            fill="#ad56eb" 
+            opacity="0.7"/>
+  
+    <circle cx="128" cy="56" r="8" 
+            fill="#dfe3d7" 
+            opacity="0.7"/>
+  
+    <circle cx="146" cy="56" r="8" 
+            fill="#f79c0a" 
+            opacity="0.7"/>
+  
+    <circle cx="164" cy="56" r="8" 
+            fill="#e30720" 
+            opacity="0.7"/>
+  
+    <circle cx="182" cy="56" r="8" 
+            fill="#c461d8" 
+            opacity="0.7"/>
+  
+    <circle cx="20" cy="74" r="8" 
+            fill="#62c7a2" 
+            opacity="0.7"/>
+  
+    <circle cx="38" cy="74" r="8" 
+            fill="#a7da33" 
+            opacity="0.7"/>
+  
+    <circle cx="56" cy="74" r="8" 
+            fill="#ea4fab" 
+            opacity="0.7"/>
+  
+    <circle cx="74" cy="74" r="8" 
+            fill="#558d63" 
+            opacity="0.7"/>
+  
+    <circle cx="92" cy="74" r="8" 
+            fill="#1034df" 
+            opacity="0.7"/>
+  
+    <circle cx="110" cy="74" r="8" 
+            fill="#a4e87d" 
+            opacity="0.7"/>
+  
+    <circle cx="128" cy="74" r="8" 
+            fill="#1ca02d" 
+            opacity="0.7"/>
+  
+    <circle cx="146" cy="74" r="8" 
+            fill="#e4dc53" 
+            opacity="0.7"/>
+  
+    <circle cx="164" cy="74" r="8" 
+            fill="#5955f8" 
+            opacity="0.7"/>
+  
+    <circle cx="182" cy="74" r="8" 
+            fill="#d5c6a1" 
+            opacity="0.7"/>
+  
+    <circle cx="20" cy="92" r="8" 
+            fill="#3a3c5f" 
+            opacity="0.7"/>
+  
+    <circle cx="38" cy="92" r="8" 
+            fill="#427a41" 
+            opacity="0.7"/>
+  
+    <circle cx="56" cy="92" r="8" 
+            fill="#1e3de2" 
+            opacity="0.7"/>
+  
+    <circle cx="74" cy="92" r="8" 
+            fill="#30b796" 
+            opacity="0.7"/>
+  
+    <circle cx="92" cy="92" r="8" 
+            fill="#bdd25c" 
+            opacity="0.7"/>
+  
+    <circle cx="110" cy="92" r="8" 
+            fill="#3a403b" 
+            opacity="0.7"/>
+  
+    <circle cx="128" cy="92" r="8" 
+            fill="#22f809" 
+            opacity="0.7"/>
+  
+    <circle cx="146" cy="92" r="8" 
+            fill="#d749f8" 
+            opacity="0.7"/>
+  
+    <circle cx="164" cy="92" r="8" 
+            fill="#e1714f" 
+            opacity="0.7"/>
+  
+    <circle cx="182" cy="92" r="8" 
+            fill="#ce49a1" 
+            opacity="0.7"/>
+  
+  
+  <!-- Add text elements -->
+  
+    <text x="10" y="150" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 1
+    </text>
+  
+    <text x="45" y="150" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 2
+    </text>
+  
+    <text x="80" y="150" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 3
+    </text>
+  
+    <text x="115" y="150" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 4
+    </text>
+  
+    <text x="150" y="150" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 5
+    </text>
+  
+    <text x="10" y="162" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 6
+    </text>
+  
+    <text x="45" y="162" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 7
+    </text>
+  
+    <text x="80" y="162" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 8
+    </text>
+  
+    <text x="115" y="162" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 9
+    </text>
+  
+    <text x="150" y="162" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 10
+    </text>
+  
+    <text x="10" y="174" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 11
+    </text>
+  
+    <text x="45" y="174" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 12
+    </text>
+  
+    <text x="80" y="174" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 13
+    </text>
+  
+    <text x="115" y="174" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 14
+    </text>
+  
+    <text x="150" y="174" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 15
+    </text>
+  
+    <text x="10" y="186" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 16
+    </text>
+  
+    <text x="45" y="186" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 17
+    </text>
+  
+    <text x="80" y="186" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 18
+    </text>
+  
+    <text x="115" y="186" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 19
+    </text>
+  
+    <text x="150" y="186" 
+          font-family="Arial" font-size="10" fill="#333">
+      Text 20
+    </text>
+  
+  
+  <!-- Add some paths for complexity -->
+  
+    <path d="M0,180 Q10,160 20,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M20,180 Q30,160 40,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M40,180 Q50,160 60,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M60,180 Q70,160 80,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M80,180 Q90,160 100,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M100,180 Q110,160 120,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M120,180 Q130,160 140,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M140,180 Q150,160 160,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M160,180 Q170,160 180,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+    <path d="M180,180 Q190,160 200,180" 
+          stroke="#666" stroke-width="2" fill="none"/>
+  
+</svg>

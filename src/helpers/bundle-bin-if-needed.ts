@@ -12,6 +12,8 @@ import { jsExtensions } from '../constants/js-extensions';
 import type { ContextModel } from '../models/context';
 import { isNil } from '../utils/checks';
 import { stylesExtensions } from '../constants/styles-extensions';
+import { allAssetExtensions } from '../constants/asset-extensions';
+import { getRollupAssetPluginsForBin } from './get-rollup-asset-plugins';
 
 export const bundleBinIfNeeded = async (ctx: ContextModel) => {
   const { pkg, pkgPath, options, binOutput } = ctx;
@@ -29,6 +31,7 @@ export const bundleBinIfNeeded = async (ctx: ContextModel) => {
         preserveExtensions: true,
       }),
       json(),
+      ...getRollupAssetPluginsForBin(),
       swc({
         ...getSwcConfig(ctx, binOutput),
         tsconfig: ctx.tsconfigPath ?? false,
@@ -36,7 +39,7 @@ export const bundleBinIfNeeded = async (ctx: ContextModel) => {
       commonjs({ extensions: jsExtensions }),
       nodeResolve({
         rootDir: options.cwd,
-        extensions: [...jsExtensions, ...stylesExtensions],
+        extensions: [...jsExtensions, ...stylesExtensions, ...allAssetExtensions],
       }),
     ],
   });
