@@ -1,3 +1,15 @@
+# [1.6.0](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.5...v1.6.0) (2025-09-02)
+
+
+### Bug Fixes
+
+* fix module syntax ([1440d99](https://github.com/AbdUlHamedMaree/lbundle/commit/1440d9931073ddc8550f773ba777da362c248690))
+
+
+### Features
+
+* support assets imports ([ce104f4](https://github.com/AbdUlHamedMaree/lbundle/commit/ce104f4945be3cff9155e067a10bde7dfc79e2bb))
+
 ## [1.5.5](https://github.com/AbdUlHamedMaree/lbundle/compare/v1.5.4...v1.5.5) (2025-05-12)
 
 
