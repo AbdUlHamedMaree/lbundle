@@ -92,80 +92,6 @@ export declare const Button: React.FC<ButtonProps>;
 "
 `;
 
-exports[`Utils Library Build with no options: cli.js 1`] = `
-"#!/usr/bin/env node
-'use strict';
-
-var require$$0 = require('lodash.merge');
-
-var cli = {};
-
-var src = {};
-
-(function (exports) {
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	Object.defineProperty(exports, "myMerge", {
-	    enumerable: true,
-	    get: function() {
-	        return myMerge;
-	    }
-	});
-	const _lodashmerge = /*#__PURE__*/ _interop_require_default(require$$0);
-	function _interop_require_default(obj) {
-	    return obj && obj.__esModule ? obj : {
-	        default: obj
-	    };
-	}
-	const myMerge = (o1, o2)=>(0, _lodashmerge.default)(o1, o2); 
-} (src));
-
-Object.defineProperty(cli, "__esModule", {
-    value: true
-});
-const _ = src;
-const o = (0, _.myMerge)({
-    a: 1,
-    b: 1
-}, {
-    b: 2,
-    c: 2
-});
-console.log(JSON.stringify(o, null, 2));
-
-module.exports = cli;
-//# sourceMappingURL=cli.js.map
-"
-`;
-
-exports[`Utils Library Build with no options: index.js 1`] = `
-"'use strict';
-
-var index = require('./index2.js');
-
-
-
-module.exports = index;
-//# sourceMappingURL=index.js.map
-"
-`;
-
-exports[`Utils Library Build with no options: index.mjs 1`] = `
-"import merge from 'lodash.merge';
-
-const myMerge = (o1, o2)=>merge(o1, o2);
-
-export { myMerge };
-//# sourceMappingURL=index.mjs.map
-"
-`;
-
-exports[`Utils Library Build with no options: index.d.ts 1`] = `
-"export declare const myMerge: (o1: object, o2: object) => object;
-"
-`;
-
 exports[`React Library Build with no options: components/asset-showcase/index.js 1`] = `
 "'use strict';
 
@@ -420,11 +346,10 @@ var manual = require('../../_virtual/manual.pdf.js');
 	                        },
 	                        children: (0, _jsxruntime.jsxs)("p", {
 	                            children: [
-	                                "SVG as image URL:",
-	                                ' ',
+	                                "SVG as image URL: ",
 	                                (0, _jsxruntime.jsx)("img", {
 	                                    src: _logosvg.default,
-	                                    alt: 'Logo as image',
+	                                    alt: 'Logo',
 	                                    width: '20',
 	                                    height: '20'
 	                                })
@@ -444,6 +369,10 @@ var manual = require('../../_virtual/manual.pdf.js');
 	                            height: '100',
 	                            controls: true,
 	                            children: [
+	                                (0, _jsxruntime.jsx)("track", {
+	                                    kind: 'captions',
+	                                    src: _demomp4.default
+	                                }),
 	                                (0, _jsxruntime.jsx)("source", {
 	                                    src: _demomp4.default,
 	                                    type: 'video/mp4'
@@ -459,6 +388,10 @@ var manual = require('../../_virtual/manual.pdf.js');
 	                        children: (0, _jsxruntime.jsxs)("audio", {
 	                            controls: true,
 	                            children: [
+	                                (0, _jsxruntime.jsx)("track", {
+	                                    kind: 'captions',
+	                                    src: _soundmp3.default
+	                                }),
 	                                (0, _jsxruntime.jsx)("source", {
 	                                    src: _soundmp3.default,
 	                                    type: 'audio/mpeg'
@@ -827,11 +760,10 @@ const AssetShowcase = (param)=>{
                         },
                         children: jsxs("p", {
                             children: [
-                                "SVG as image URL:",
-                                ' ',
+                                "SVG as image URL: ",
                                 jsx("img", {
                                     src: logoSvgUrl,
-                                    alt: 'Logo as image',
+                                    alt: 'Logo',
                                     width: '20',
                                     height: '20'
                                 })
@@ -851,6 +783,10 @@ const AssetShowcase = (param)=>{
                             height: '100',
                             controls: true,
                             children: [
+                                jsx("track", {
+                                    kind: 'captions',
+                                    src: demoVideo
+                                }),
                                 jsx("source", {
                                     src: demoVideo,
                                     type: 'video/mp4'
@@ -866,6 +802,10 @@ const AssetShowcase = (param)=>{
                         children: jsxs("audio", {
                             controls: true,
                             children: [
+                                jsx("track", {
+                                    kind: 'captions',
+                                    src: soundMp3
+                                }),
                                 jsx("source", {
                                     src: soundMp3,
                                     type: 'audio/mpeg'
@@ -1059,5 +999,79 @@ export interface AssetShowcaseProps {
     className?: string;
 }
 export declare const AssetShowcase: React.FC<AssetShowcaseProps>;
+"
+`;
+
+exports[`Utils Library Build with no options: cli.js 1`] = `
+"#!/usr/bin/env node
+'use strict';
+
+var require$$0 = require('lodash.merge');
+
+var cli = {};
+
+var src = {};
+
+(function (exports) {
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	Object.defineProperty(exports, "myMerge", {
+	    enumerable: true,
+	    get: function() {
+	        return myMerge;
+	    }
+	});
+	const _lodashmerge = /*#__PURE__*/ _interop_require_default(require$$0);
+	function _interop_require_default(obj) {
+	    return obj && obj.__esModule ? obj : {
+	        default: obj
+	    };
+	}
+	const myMerge = (o1, o2)=>(0, _lodashmerge.default)(o1, o2); 
+} (src));
+
+Object.defineProperty(cli, "__esModule", {
+    value: true
+});
+const _ = src;
+const o = (0, _.myMerge)({
+    a: 1,
+    b: 1
+}, {
+    b: 2,
+    c: 2
+});
+console.log(JSON.stringify(o, null, 2));
+
+module.exports = cli;
+//# sourceMappingURL=cli.js.map
+"
+`;
+
+exports[`Utils Library Build with no options: index.js 1`] = `
+"'use strict';
+
+var index = require('./index2.js');
+
+
+
+module.exports = index;
+//# sourceMappingURL=index.js.map
+"
+`;
+
+exports[`Utils Library Build with no options: index.mjs 1`] = `
+"import merge from 'lodash.merge';
+
+const myMerge = (o1, o2)=>merge(o1, o2);
+
+export { myMerge };
+//# sourceMappingURL=index.mjs.map
+"
+`;
+
+exports[`Utils Library Build with no options: index.d.ts 1`] = `
+"export declare const myMerge: (o1: object, o2: object) => object;
 "
 `;
