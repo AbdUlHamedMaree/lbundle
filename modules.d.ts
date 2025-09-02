@@ -221,7 +221,7 @@ declare module '*.svg?url' {
 
 // React SVG component type
 // eslint-disable-next-line import/no-unresolved
-interface SVGProps extends import('react').SVGProps<SVGSVGElement> {
+interface SVGProps extends React.SVGProps<SVGSVGElement> {
   title?: string;
   titleId?: string;
 }
